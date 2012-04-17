@@ -10,6 +10,9 @@
 <body class="<%= params[:controller].parameterize %>-controller">
 
   <header>
+    <div class="content">
+      <%= render :partial => 'layouts/header' %>
+    </div>
   </header>
 
 <%= yield %>
