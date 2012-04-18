@@ -9,13 +9,21 @@
 
 <body class="<%= params[:controller].parameterize %>-controller">
 
+  <% if params[:controller] == 'root' %>
+  
+    <%= yield %>
+    
+  <% else %>
+  
   <header>
     <div class="content">
       <%= render :partial => 'layouts/header' %>
     </div>
   </header>
 
-<%= yield %>
+    <div id='main'>
+    </div>
+    <% end %>
 
   <footer>
     <div>

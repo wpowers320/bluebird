@@ -1,3 +1,10 @@
+$site-width: 1120px
+$site-padding: 10px
+
+=centered-on-page
+  width: $site-width + ($site-padding * 2)
+  margin: 0 auto
+  padding: 0 $site-padding
 
 body
   font-family: Helvetica, Arial, Verdana, sans-serif
@@ -8,7 +15,7 @@ body
     min-width: 1160px
     height: 50px
     .content
-      align: center
+      +centered-on-page
       .logo-wrap
         width: 190px
 

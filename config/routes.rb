@@ -1,4 +1,6 @@
 Theatr::Application.routes.draw do
+  resources :users
+
   get "root/homepage"
 
   # The priority is based upon order of creation:
