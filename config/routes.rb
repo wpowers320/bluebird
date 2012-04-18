@@ -1,5 +1,7 @@
 Theatr::Application.routes.draw do
 
+  devise_for :users
+
   get "root/homepage"
 
   # The priority is based upon order of creation:
