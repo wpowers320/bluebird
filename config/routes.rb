@@ -2,6 +2,8 @@ Theatr::Application.routes.draw do
 
   devise_for :users
 
+  match '/profile', :controller => :profile, :action => :profile, :as => :profile  
+
   get "root/homepage"
 
   # The priority is based upon order of creation:
