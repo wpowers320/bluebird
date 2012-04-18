@@ -1,5 +1,14 @@
-require File.expand_path('../boot', __FILE__)
+# standard ENV settings should be places in env.yml or env.rb, this can be
+# used to force the app into a particular mode
+#
+#
+  config_dir = File.dirname(__FILE__)
+  env_yml = File.join(config_dir, 'env.yml')
+  env_rb = File.join(config_dir, 'env.rb')
+  ENV.update(YAML.load(IO.read(env_yml))) if test(?e, env_yml)
+  Kernel.load(env_rb) if test(?e, env_rb)
 
+require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 
 if defined?(Bundler)
