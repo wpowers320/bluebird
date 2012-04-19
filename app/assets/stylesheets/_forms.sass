@@ -1,0 +1,101 @@
+$form-grey: #f1f1f1
+$error-red: #cc0000
+
+=button
+  +unstyled-link
+  cursor: pointer
+  border: 1px solid #bbb
+  +border-radius(5px)
+  +background(linear-gradient(color-stops(white, darken(white, 8))))
+  text-shadow: white 1px 1px 1px
+  font-size: 16px
+  padding: 8px 10px
+  margin: 0 10px
+  -webkit-box-shadow: inset 0 1px 0 #eeeeee, white 0 1px 0
+  -moz-box-shadow: inset 0 1px 0 #eeeeee, white 0 1px 0
+  box-shadow: inset 0 1px 0 #eeeeee, white 0 1px 0  
+  &:hover
+    +background(linear-gradient(color-stops(darken(white,8), darken(white, 14))))
+    color: black
+  &:active
+    +background(linear-gradient(color-stops(darken(white, 14), darken(white, 20))))
+    -webkit-box-shadow: inset 0 1px 0 #f0f0f0, #f0f0f0 0 1px 0
+    -moz-box-shadow: inset 0 1px 0 #f0f0f0, #f0f0f0 0 1px 0
+    box-shadow: inset 0 1px 0 #f0f0f0, #f0f0f0 0 1px 0
+
+
+=unstyled-link
+  text-decoration: none
+  color: #333
+  font-weight: bold
+
+=input-base
+  background-color: $form-grey
+  border: 1px solid darken($form-grey, 10)
+  padding: 10px
+
+  &.file
+    background-color: transparent
+    padding: 0
+    border: none
+    -moz-box-shadow: none
+    -webkit-box-shadow: none
+    -o-box-shadow: none
+    box-shadow: none
+
+.btn
+  +button 
+
+form.formtastic
+  input, textarea
+    +input-base
+    border-radius: 3px 
+    border: 1px solid #d7d7d7
+    background-color: white
+    -moz-box-shadow: #eee 0 2px 5px
+    -webkit-box-shadow: #eee 0 2px 5px
+    -o-box-shadow: #eee 0 2px 5px
+    box-shadow: #eee 0 2px 5px 
+
+  input[type=submit]
+    +button
+
+  .align-with-fields
+    padding-left: 177px
+
+  .errorExplanation
+    border-bottom: 1px solid #CCC
+    padding-bottom: 1em
+    margin-bottom: 1em
+    h2
+      color: $error-red
+    p
+      font-weight: bold
+
+    ul
+      margin-top: 1em
+      list-style: inside disc
+  
+.devise-fields
+  text-align: center
+  input[type="text"], input[type="email"], input[type="password"]
+    +input-base
+    width: 100%
+    border: 1px solid #d7d7d7
+    background-color: white
+    -moz-box-shadow: #eee 0 2px 5px
+    -webkit-box-shadow: #eee 0 2px 5px
+    -o-box-shadow: #eee 0 2px 5px
+    box-shadow: #eee 0 2px 5px
+    border-radius: 3px 
+  input[type=submit]
+    +button
+  div
+    width: 300px
+    margin: 0 auto 1em
+    display: block
+    text-align: left
+    &.buttons
+      text-align: center
+      margin-top: 20px
+

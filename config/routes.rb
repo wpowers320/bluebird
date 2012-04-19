@@ -6,6 +6,8 @@ Theatr::Application.routes.draw do
 
   get "root/homepage"
 
+  match 'static(/:action(.:format))', :controller => 'static', :as => 'static'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

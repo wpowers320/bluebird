@@ -1,2 +1,16 @@
 <div id='content'>
+  <div class='logo-wrap'>
+    <div class='homepage-logo'>
+    </div>
   </div>
+</div>
+
+<div>
+  <%= form_for(:user, :url => registration_path(:user)) do |f| %>
+    <div class='signup'>
+      <%= f.email_field :email, :placeholder => "Email Address", :class => "landing-form-field-email" %>
+      <%= f.password_field :password, :placeholder => "Password", :class => "landing-form-field-password" %> 
+      <%= f.submit 'Get Started!', :class => "submit btn" %>
+    </div>
+  <% end %>
+</div>

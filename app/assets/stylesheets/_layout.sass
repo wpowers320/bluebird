@@ -1,23 +1,68 @@
+// setting width with variables for everything may seem like overkill but will be worth it in the end :)
 $site-width: 1120px
+$content-outer-width: 760px
+
+$content-bg-padding: 25px
+$content-inner-padding: 10px
+$content-inner-width: $content-outer-width - (2*($content-bg-padding + $content-inner-padding))
+
+$sidebar-padding: 10px
+$sidebar-width: ($site-width - $content-outer-width)/2
+
+// add some padding to sides so smaller browser windows
+// still have a nice edge with space before content
 $site-padding: 10px
 
+
 =centered-on-page
-  width: $site-width + ($site-padding * 2)
+  width: $content-outer-width
   margin: 0 auto
   padding: 0 $site-padding
+  // background-color: white
+
 
 body
   font-family: Helvetica, Arial, Verdana, sans-serif
+  background: #eee
 
   > header
-    background-repeat: repeat-x
-    +background(linear-gradient(#cdc673, #dbdb70))
+    background-repeat: repeat-x   
     min-width: 1160px
     height: 50px
     .content
       +centered-on-page
       .logo-wrap
         width: 190px
-
-        
+        .logo
+          background-image: url('/images/logo.png')
+          display: block
+          text-indent: -119988px
+          overflow: hidden
+          text-align: center
+          background-repeat: no-repeat
+          background-position: 50% 50%
+          width: 450px
+          height: 100px
+  
+  > footer
+    .content
+      +centered-on-page 
+      padding-bottom: 10px
+      nav
+        float: left
+        ul
+          list-style: none
+          padding-bottom: 60px 
+          li
+            font-weight: bold
+            color: #333
+            a
+              color: #333
+              text-decoration: none
+              font-weight: normal
+              margin: 0 10px
+              &:hover
+                color: #000
+                text-decoration: underline 
+                        
     
