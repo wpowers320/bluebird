@@ -11,6 +11,10 @@
 @import root
 @import forms
 
+h1, h2, p
+  margin: 10px 10px
+
+
 header
   width: 100%
 header div.content
@@ -29,4 +33,35 @@ header div.content
       width: 450px
       height: 100px
       margin: 0 0 410px 85px
+
+.landing-form-field
+  font-size: 16px
+  +border-radius(5px)
+  width: $form-width
+  padding: 8px 10px
+  margin: 0 0 10px 10px
+  border: 1px solid #CCC
+  -webkit-box-shadow: inset 0 1px 0 #EEE,white 0 1px 0
+  -moz-box-shadow: inset 0 1px 0 #EEE,white 0 1px 0
+  box-shadow: inset 0 1px 0 #EEE,white 0 1px 0 
+
+.dropdown-form-field
+  font-size: 16px
+  +border-radius(5px)
+  width: $form-width 
+  padding: 8px 10px
+  margin: 0 0 10px 0px 
+  border: 1px solid #CCC
+  -webkit-box-shadow: inset 0 1px 0 #EEE,white 0 1px 0
+  -moz-box-shadow: inset 0 1px 0 #EEE,white 0 1px 0
+  box-shadow: inset 0 1px 0 #EEE,white 0 1px 0
+
+#forgot_password
+  text-decoration: none
+  color: #333
+  &:hover
+    text-decoration: underline
+    color: black
+
+ 
 

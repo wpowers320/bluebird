@@ -1,11 +1,47 @@
 <div class='logo-wrap'>
 </div>
-<nav>
+<nav class="nav">
   <ul>
     <% if user_signed_in? %>
     <li>
-      Signed in as <%= current_user.email %>
-      <%= link_to 'Sign Out', destroy_user_session_path %>
+      <!-- Signed in as <%= current_user.email %> -->
+      <%= link_to 'Sign Out', destroy_user_session_path, :class => 'signout' %>
+    </li>
+    <% else %>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        $('.user-name').click(function(e) {
+          e.preventDefault();
+          return $('.dropdown-menu').toggle();
+        });
+
+      });
+    </script>
+
+    <li>
+      <div class="user-menu">
+      <li class="user-name">
+        <%= link_to 'Sign In', '#' %>
+        <%= link_to raw("&#9662;"), '#' %>
+      </li>
+      <ul class="dropdown-menu sign-in">
+        <li>  
+          <%= form_for :user, :url => session_path(:user) do |f| %>
+            <div></br>
+              <%= f.email_field :email, :placeholder => "Email", :class => "dropdown-form-field" %>
+            </div>
+            <div></br>
+              <%= f.password_field :password, :placeholder => "Password", :class => "dropdown-form-field" %>
+            </div></br>
+              <%= f.submit "Sign in", :class => "btn signin" %>
+            </br></br> 
+            <%= link_to "Forgot your password?", '/users/password/new', :id => "forgot_password" %>
+          <% end %>
+        </li>
+      </ul>
+      </div>
     </li>
     <% end %>
   </ul>

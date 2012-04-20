@@ -12,6 +12,13 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # config.authentication_keys = [ :email ]
 
+  # Devise.case_insensitive_keys is false which is no longer supported. Recent Devise versions automatically downcase the e-mail before sa  # ving it to the database but your app isn't using this feature. You can solve this issue by either:
+
+  # 1) Setting config.case_insensitive_keys = [:email] in your Devise initializer and running a migration that will downcase all emails al  # ready in the database;
+
+  # 2) Setting config.case_insensitive_keys = [] (so nothing will be downcased) and making sure you are not using Devise :validatable (sin  # ce validatable assumes caseinsensitivity)
+  config.case_insensitive_keys = [:email]
+
   # Tell if authentication through request.params is enabled. True by default.
   # config.params_authenticatable = true
 

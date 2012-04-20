@@ -13,3 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$('.user-name').click(function(e) {
+  e.preventDefault();
+  return $('.dropdown-menu').toggle();
+});
