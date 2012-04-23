@@ -1,11 +1,17 @@
-<div class='logo-wrap'>
-</div>
+<% if user_signed_in? %>
+  <div class='logo-wrap'>
+    <a href="/" class="profile-logo" title="Theatr.co Home">Theatr.co</a>
+  </div>
+<% end %>
+
 <nav class="nav">
   <ul>
     <% if user_signed_in? %>
     <li>
       <!-- Signed in as <%= current_user.email %> -->
       <%= link_to 'Sign Out', destroy_user_session_path, :class => 'signout' %>
+      <%= link_to 'Settings', '#', :class => 'settings' %>
+      <%= link_to 'Help Center', '#', :class => 'help' %>
     </li>
     <% else %>
 
@@ -32,7 +38,7 @@
             <div></br>
               <%= f.email_field :email, :placeholder => "Email", :class => "dropdown-form-field" %>
             </div>
-            <div></br>
+            <div>
               <%= f.password_field :password, :placeholder => "Password", :class => "dropdown-form-field" %>
             </div></br>
               <%= f.submit "Sign in", :class => "btn signin" %>
