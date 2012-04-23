@@ -1,0 +1,10 @@
+<%= form_for @video, :url => videos_path(:action => 'create'), :html => {:multipart => true} do |f| %>
+
+  <p>
+    <%= f.file_field :video %>
+  </p>
+  <p>
+    <%= f.submit "Submit Video" %>
+  </p>
+<% end %>
+

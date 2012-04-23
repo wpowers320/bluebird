@@ -1,8 +1,9 @@
-Theatr::Application.routes.draw do
+Theatr::Application.routes.draw do 
 
   devise_for :users
 
   match '/profile', :controller => :profile, :action => :profile, :as => :profile  
+  match '/video(/:action)', :controller => :video, :action => :new, :as => 'videos' 
 
   get "root/homepage"
 
