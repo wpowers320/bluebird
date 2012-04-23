@@ -31,9 +31,10 @@ body
     min-width: 1160px
     height: 50px
     .content
-      +centered-on-page
+      +centered-on-page 
       .logo-wrap
-        width: 190px
+        float: left
+        display: inline
         .logo
           background-image: url('/images/logo.png')
           display: block
@@ -45,9 +46,15 @@ body
           width: 450px
           height: 100px
 
+        .profile-logo
+          display: block  
+          width: 215px
+          height: 60px
+          +replace-text('/images/profile_logo.png')
+
       .nav
         display: inline-block
-        float: right 
+        float: right
 
       .nav li
         display: block	
@@ -66,10 +73,44 @@ body
         text-align: left
         background-image: url('/images/sign_out_icon.png')
         background-repeat: no-repeat
-        background-position: 100% 0%
-        height: 30px
+        background-position: 100% 10%
+        height: 38px
+        width: 38px
+        float: right
+        margin: 0 5px
         &:hover
-          background-position: 100% 104%
+          background-position: 100% 115%
+
+      .nav .settings
+        display: block
+        text-indent: -119988px
+        overflow: hidden
+        text-align: left
+        background-image: url('/images/settings_icon.png')
+        background-repeat: no-repeat
+        background-position: 100% 10%
+        height: 38px
+        width: 38px
+        float: right
+        margin: 0 5px
+        &:hover
+          background-position: 100% 115%
+       
+      .nav .help
+        display: block
+        text-indent: -119988px
+        overflow: hidden
+        text-align: left
+        background-image: url('/images/help_icon.png')
+        background-repeat: no-repeat
+        background-position: 100% 10%
+        height: 38px
+        width: 38px
+        float: right
+        margin: 0 5px
+        &:hover
+          background-position: 100% 115%
+
 
       .nav .user-name
         padding: 9px 11px
