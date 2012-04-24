@@ -1,0 +1,12 @@
+<%
+    if params[:controller] == 'payments'
+      active_tab = 'payments'
+    end
+  -%>
+
+<ul class='header-categories'>  
+  <% class_names = active_tab == 'payments' ? 'btn active' : 'btn' %>
+  <%= link_to 'Payments', payments_path, :class => class_names or 'btn' %>
+</ul>
+
+<div class='header-divider'></div>

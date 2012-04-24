@@ -143,11 +143,11 @@ body
          
   > footer
     .content
-      +centered-on-page 
-      padding-bottom: 10px
+      width: 100%
       overflow: hidden
-      nav
-        float: left
+      text-align: center
+      margin: 0 auto
+      nav 
         ul
           list-style: none
           padding-bottom: 10px 
@@ -166,7 +166,8 @@ body
 #left-sidebar
   padding: $sidebar-padding
   width: 175px 
-  margin: 50px 0 0 0 
+  margin: 0
+  float: left 
   ul.categories
     padding: 0 40px
     li
@@ -189,16 +190,28 @@ body
           color: black
           background-position: 50% 118%
           background-repeat: no-repeat 
-      &.active 
-        a
-          color: black
-          background-position: 50% 118%
+      a.active 
+        color: black
+        background-position: 50% 118%
+      a.home
+        background-image: url('/images/home_icon.png')
+        max-height: 0
+      a.movie
+        background-image: url('/images/movie_icon.png')
+        max-height: 0
+      a.payments
+        background-image: url('/images/payments_icon.png')
+        max-height: 0  
 
-    @each $category in $event-categories
-      .#{$category} a
-        background:
-          image: image-url("/images/#{$category}_icon.png")
-        max-height: 0px
+#right-sidebar
+  background: white
+  +border-radius(5px)
+  border: 1px solid #bbb
+  margin: 0 10px 0 80px
+  float: left
+  min-width: 300px
+  min-height: 300px
+
          
         
                                 

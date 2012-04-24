@@ -4,3 +4,7 @@ PROFILE_CATEGORIES = [
   'Payments',
 ]
 
+MOVIE_CATEGORIES = [
+  'Movie',
+  'Details',
+]

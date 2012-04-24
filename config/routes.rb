@@ -9,6 +9,10 @@ Theatr::Application.routes.draw do
 
   match 'static(/:action(.:format))', :controller => 'static', :as => 'static'
 
+  match '/home(/:action)', :controller => :home, :action => :index, :as => :home
+
+  match '/payments(/:action)', :controller => :payments, :action => :index, :as => :payments
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,24 @@
+<%
+    if params[:controller] == 'home'
+      active_tab = 'copy'
+    elsif
+      active_tab = 'trailer'
+    elsif
+      active_tab = 'theme'
+    elsif
+      active_tab = 'connect'
+    end
+  -%>
+
+<ul class='header-categories'>  
+  <% class_names = active_tab == 'copy' ? 'flat-right active' : 'flat-right' %>
+  <%= link_to 'Copy', '#', :class => class_names or 'flat-right' %>
+  <% class_names = active_tab == 'trailer' ? 'flat active' : 'flat' %>
+  <%= link_to 'Trailer', '#', :class => 'flat' %>
+  <% class_names = active_tab == 'theme' ? 'flat active' : 'flat' %>
+  <%= link_to 'Theme', '#', :class => 'flat' %>
+  <% class_names = active_tab == 'connect' ? 'flat-left active' : 'flat-left' %>
+  <%= link_to 'Connect', '#', :class => 'flat-left' %>  
+</ul>
+
+<div class='header-divider'></div>
