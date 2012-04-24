@@ -20,6 +20,7 @@ end
 
 module Theatr
   class Application < Rails::Application
+    config.autoload_paths += %w( lib app )
    
    # Precompile *all* assets, except those that start with underscore
       config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/

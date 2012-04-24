@@ -1,0 +1,19 @@
+<% unless ['/static',].any? {|path| fullpath.start_with?(path)} || fullpath == '/' %>
+<% end %>
+<nav>
+<ul class='categories'>
+    <%
+    PROFILE_CATEGORIES.each do |category|
+    slug = category.parameterize('_')
+    classes = [slug]
+    if profile_page?
+      classes << 'active' if slug == params[:category] or (params[:category].blank? and slug == 'Home')
+    end
+  %>
+
+    <li class="<%= classes.join(' ') %>">  
+      <%= link_to(category, :category => slug) %>
+    </li>
+  <% end %>
+</ul>
+</nav>

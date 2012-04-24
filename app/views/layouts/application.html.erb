@@ -19,6 +19,9 @@
     <%= yield %>
   <% else %> 
   <div id='main'>
+      <div id="left-sidebar">
+        <%= render(:partial => '/profile/left_sidebar') %>
+      </div>
     <%= yield %>
   </div>
   <% end %>

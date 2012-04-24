@@ -13,6 +13,7 @@ $sidebar-width: ($site-width - $content-outer-width)/2
 // still have a nice edge with space before content
 $site-padding: 10px
 
+$event-categories: 'home', 'movie', 'payments'
 
 =centered-on-page
   width: $content-outer-width
@@ -144,6 +145,7 @@ body
     .content
       +centered-on-page 
       padding-bottom: 10px
+      overflow: hidden
       nav
         float: left
         ul
@@ -153,12 +155,51 @@ body
             font-weight: bold
             color: #333
             a
-              color: #333
+              color: #666
               text-decoration: none
               font-weight: normal
               margin: 0 10px
               &:hover
                 color: #000
                 text-decoration: underline 
-                        
+
+#left-sidebar
+  padding: $sidebar-padding
+  width: 175px 
+  margin: 50px 0 0 0 
+  ul.categories
+    padding: 0 40px
+    li
+      font-size: 16px
+      font-weight: bold
+      margin-bottom: 30px 
+      background-repeat: no-repeat
+      list-style: none
+      a
+        text-decoration: none
+        display: block
+        width: 100%
+        padding-top: 40px
+        height: 30px  
+        color: #666
+        text-align: center
+        background-position: 50% 0%
+        background-repeat: no-repeat
+        &:hover
+          color: black
+          background-position: 50% 118%
+          background-repeat: no-repeat 
+      &.active 
+        a
+          color: black
+          background-position: 50% 118%
+
+    @each $category in $event-categories
+      .#{$category} a
+        background:
+          image: image-url("/images/#{$category}_icon.png")
+        max-height: 0px
+         
+        
+                                
     
