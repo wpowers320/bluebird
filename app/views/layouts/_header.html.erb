@@ -1,7 +1,14 @@
 <% unless ['/homepage'].any? {|path| fullpath.start_with?(path)} || fullpath == '/' %>
-  <div class='logo-wrap'>
-    <a href="/home" class="profile-logo" title="Theatr.co Home">Theatr.co</a>
-  </div>
+  <% if user_signed_in? %>
+    <div class='logo-wrap'>
+      <a href="/home" class="profile-logo" title="Theatr.co Home">Theatr.co</a>
+    </div>
+  <% else %>
+    <div class='logo-wrap'>
+      <a href="/" class="profile-logo" title="Theatr.co Home">Theatr.co</a>
+    </div>
+  <% end %>
+<% end %>
 
 <nav class="nav">
   <ul>
@@ -51,4 +58,4 @@
     <% end %>
   </ul>
 </nav>
-<% end %>
+
