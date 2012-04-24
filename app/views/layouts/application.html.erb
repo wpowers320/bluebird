@@ -17,7 +17,7 @@
 
   <% if params[:controller] == 'root' %>
     <%= yield %>
-  <% else %> 
+  <% elsif user_signed_in?%> 
     <div id='main'>
       <div id="left-sidebar">
         <%= render(:partial => 'layouts/left_sidebar') %>
