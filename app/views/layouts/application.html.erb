@@ -17,7 +17,7 @@
 
   <% if params[:controller] == 'root' %>
     <%= yield %>
-  <% elsif user_signed_in?%> 
+  <% else %> 
     <div id='main'>
       <div id="left-sidebar">
         <%= render(:partial => 'layouts/left_sidebar') %>
@@ -25,9 +25,11 @@
       <div id='middle'>
         <%= yield %>
       </div>
+      <% unless ['/static'].any? {|path| fullpath.start_with?(path)} || fullpath == '/' %>
       <div id="right-sidebar">
         <%= render(:partial => '/layouts/right_sidebar') %>
       </div>
+      <% end %>
     </div>
   <% end %>
 
