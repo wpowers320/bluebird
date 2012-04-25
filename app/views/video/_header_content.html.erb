@@ -1,6 +1,6 @@
 <%
     if params[:controller] == 'video'
-      active_tab = 'movie'
+      active_tab = 'movie' 
     else
       active_tab = 'details'
     end
@@ -10,7 +10,7 @@
   <% class_names = active_tab == 'movie' ? 'flat-right active' : 'flat-right' %>
   <%= link_to 'Movie', videos_path, :class => class_names or 'flat-right' %>
   <% class_names = active_tab == 'details' ? 'flat-left active' : 'flat-left' %>
-  <%= link_to 'Details', '#', :class => 'flat-left' %>  
+  <%= link_to 'Details', details_path, :class => class_names or 'flat-left' %>  
 </ul>
 
 <div class='header-divider'></div>
