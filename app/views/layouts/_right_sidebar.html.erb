@@ -1,1 +1,22 @@
+<% if params[:action] == 'theme' %>
+<% else %>
+  <ul class='categories'>  
+    <li class='btn flat-bottom'>
+      <%= link_to 'Open "Website Subdomain"', '#', :class => '' %>
+    </li>
+    <li class='btn flat'>
+      <%= link_to 'Customize Theme', theme_path, :class => '' %>  
+    </li>
+    <li class='btn flat-top'>
+      <%= link_to 'Website Settings', '#', :class => '' %>
+    </li>
+    <li class='btn new-section flat-bottom'>
+      <%= link_to 'User Signup List', '#', :class => '' %>
+    </li>
+    <li class='btn flat-top'>
+      <%= link_to 'Messages', '#', :class => '' %>
+    </li>
+  </ul>
 
+
+<% end %>

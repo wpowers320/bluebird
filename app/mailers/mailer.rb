@@ -1,18 +1,16 @@
-#TODO... Configure mailer for new app. Need to set up new email address for @recipients @from and mail
-
 class Mailer < ActionMailer::Base
   default_url_options.merge(
     DefaultUrlOptions
   )
 
   default(
-    :from => App.email
+    :from => App.email 
   )
 
   def new_event_notification(event)
     @event   = event
     @subject = subject_for("New event!")
-    mail(:to => 'content@lokalite.com', :subject => @subject)
+    mail(:to => 'will@theatr.co', :subject => @subject)
   end
 
   def test(email)
@@ -20,7 +18,7 @@ class Mailer < ActionMailer::Base
   end
 
   def contact_email(email_params)
-    @recipients = 'info@lokalite.com'
+    @recipients = 'will@theatr.co'
     @from = email_params[:name]
     @subject = email_params[:subject] 
     @body["email_body"] = email_params[:comments]
@@ -30,8 +28,8 @@ class Mailer < ActionMailer::Base
   end
 
   def advertise_email(email_params)
-    @recipients = 'info@lokalite.com'
-    @from = 'lokalite@lokalite.com' 
+    @recipients = 'will@theatr.co'
+    @from = 'will@theatr.co' 
     @company = email_params[:company]
     @subscription = email_params[:subscription]
     @featuring_events = email_params[:featuring_events]
@@ -47,7 +45,7 @@ class Mailer < ActionMailer::Base
     @email = email_params[:email]
     @city = email_params[:city]
     @agency = email_params[:agency]
-    mail(:to => 'info@lokalite.com', :subject => 'Advertising Request')
+    mail(:to => 'will@theatr.co', :subject => 'Advertising Request')
     content_type "text/html"
   end
 
