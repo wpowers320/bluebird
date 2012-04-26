@@ -14,4 +14,7 @@ class VideoController < ApplicationController
         render :new
     end
   end
+
+  def details
+  end
 end

@@ -3,13 +3,17 @@ Theatr::Application.routes.draw do
   devise_for :users
 
   match '/profile', :controller => :profile, :action => :profile, :as => :profile  
-  match '/video(/:action)', :controller => :video, :action => :new, :as => 'videos' 
+  match '/video(/:action)', :controller => :video, :action => :new, :as => 'videos'
+  match '/video/details(/:action)', :controller => :video, :action => :details, :as => 'details' 
 
   get "root/homepage"
 
   match 'static(/:action(.:format))', :controller => 'static', :as => 'static'
 
   match '/home(/:action)', :controller => :home, :action => :index, :as => :home
+  match '/home/trailer(/:action)', :controller => :home, :action => :trailer, :as => 'trailer'
+  match '/home/theme(/:action)', :controller => :home, :action => :theme, :as => 'theme'
+  match '/home/connect(/:action)', :controller => :home, :action => :connect, :as => 'connect'
 
   match '/payments(/:action)', :controller => :payments, :action => :index, :as => :payments
 
