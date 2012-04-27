@@ -1,17 +1,18 @@
-<h2>Sign in</h2>
+<div id='static'>
+<h1><strong>Sign in</strong></h1>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %> 
-  <p><%= f.email_field :email, :placeholder => 'Email', :class => 'landing-form-field' %></p>
+  <div><%= f.email_field :email, :placeholder => 'Email', :class => 'landing-form-field' %></div>
 
-  <p><%= f.password_field :password, :placeholder => 'Password', :class => 'landing-form-field' %></p>
-
+  <div><%= f.password_field :password, :placeholder => 'Password', :class => 'landing-form-field' %></div>
+  </br>
   <% if devise_mapping.rememberable? -%>
-    <p><%= f.check_box :remember_me, :class => 'checkbox' %> <%= f.label :remember_me %></p>
+    <div><%= f.check_box :remember_me, :class => 'checkbox' %> <%= f.label :remember_me %></div>
   <% end -%>
-
-  <p><%= f.submit "Sign in", :class => 'btn submit' %>
+  </br>
+  <div><%= f.submit "Sign in", :class => 'btn submit' %>
      <%= render :partial => "devise/shared/links" %>
-  </p>
+  </div>
 <% end %>
-
+</div>
 

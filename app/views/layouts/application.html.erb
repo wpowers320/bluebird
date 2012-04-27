@@ -25,7 +25,7 @@
       <div id='middle'>
         <%= yield %>
       </div>
-      <% unless ['/static'].any? {|path| fullpath.start_with?(path)} || fullpath == '/' %>
+      <% unless ['/static', '/users'].any? {|path| fullpath.start_with?(path)} || fullpath == '/' %>
       <div id="right-sidebar">
         <%= render(:partial => '/layouts/right_sidebar') %>
       </div>
