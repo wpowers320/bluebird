@@ -9,12 +9,12 @@ class VideoController < ApplicationController
     @video.user = current_user
     if @video.save
       flash[:notice] = 'Video Uploaded'
-      redirect_to :controller => 'profile', :action => 'profile'
+      redirect_to :controller => 'home', :action => 'index'
       else 
         render :new
     end
   end
 
   def details
-  end
+  end  
 end

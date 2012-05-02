@@ -5,4 +5,5 @@ class HomeController < ApplicationController
 
   def trailer
   end
+
 end
