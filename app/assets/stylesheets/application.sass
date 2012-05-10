@@ -85,6 +85,13 @@ header div.content
     margin: 1px 0
     overflow: hidden
     border-bottom: 1px solid #ddd
+  .main-divider
+    background-color: #bbb      
+    height: 1px
+    margin: 1px 0
+    overflow: hidden
+    border-bottom: 1px solid #ddd
+    width: 62.5%
   #middle
     background: white
     +border-radius(5px)
@@ -126,5 +133,29 @@ header div.content
       margin: 0
       .input
         width: 450px
-        
+    .arrow_box
+      position: relative 
+    .arrow_box:after, .arrow_box:before 
+      right: 100%
+      border: solid transparent
+      content: " "
+      height: 0
+      width: 0
+      position: absolute
+      pointer-events: none
+    .arrow_box:after 
+      border-right-color: white
+      border-width: 15px
+      top: 65%
+      margin-top: -20px
+    .arrow_box:before 
+      border-right-color: #bbb
+      border-width: 16px
+      top: 65%
+      margin-top: -21px
+    .movie_arrow:after, .movie_arrow:before
+      top: 250% 
+    .payments_arrow:after, .payments_arrow:before
+      top: 450% 
+
               

@@ -61,19 +61,22 @@ select
   margin: 10px 10px
   
 .devise-fields
-  text-align: center
+  //text-align: center
+  list-style: none
   input[type="text"], input[type="email"], input[type="password"]
     +input-base
-    width: 100%
-    border: 1px solid #d7d7d7
+    width: 60%
+    border: 1px solid #bbb
     background-color: white
     -moz-box-shadow: #eee 0 2px 5px
     -webkit-box-shadow: #eee 0 2px 5px
     -o-box-shadow: #eee 0 2px 5px
     box-shadow: #eee 0 2px 5px
-    border-radius: 3px 
+    border-radius: 5px
+    margin: 10px 0 
   input[type=submit]
-    +button
+    +button 
+    margin: 10px 0
   div
     width: 300px
     margin: 0 auto 1em
@@ -85,3 +88,14 @@ select
 
 .checkbox
   margin: 0 10px
+
+form.formtastic
+  .input .label
+    width: 100%
+    //margin: 10px 0
+    padding-top: 0
+  .input
+    margin: 0
+    padding: 0
+  .actions
+    padding-left: 55%

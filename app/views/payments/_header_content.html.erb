@@ -8,11 +8,13 @@
     end
   -%>
 
-<ul class='header-categories'>  
-  <% class_names = active_tab == 'payments' ? 'btn flat-right active' : 'btn flat-right' %>
-  <%= link_to 'Payments', payments_path, :class => class_names or 'btn flat-right' %>
-  <% class_names = active_tab == 'billing' ? 'btn flat-left active' : 'btn flat-left' %>
-  <%= link_to 'Billing', billing_path, :class => class_names or 'btn flat-left' %>
-</ul>
+<div class='arrow_box payments_arrow'>
+  <ul class='header-categories'>  
+    <% class_names = active_tab == 'payments' ? 'btn flat-right active' : 'btn flat-right' %>
+    <%= link_to 'Payments', payments_path, :class => class_names or 'btn flat-right' %>
+    <% class_names = active_tab == 'billing' ? 'btn flat-left active' : 'btn flat-left' %>
+    <%= link_to 'Billing', billing_path, :class => class_names or 'btn flat-left' %>
+  </ul>
+</div>
 
 <div class='header-divider'></div>

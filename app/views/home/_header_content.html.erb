@@ -17,15 +17,17 @@
 
   -%>
 
-<ul class='header-categories'>  
-  <% class_names = active_tab == 'copy' ? 'flat-right active' : 'flat-right' %>
-  <%= link_to 'Copy', home_path, :class => class_names or 'flat-right' %>
-  <% class_names = active_tab == 'trailer' ? 'flat active' : 'flat' %>
-  <%= link_to 'Trailer', trailer_path, :class => class_names or 'flat' %>
-  <% class_names = active_tab == 'theme' ? 'flat active' : 'flat' %>
-  <%= link_to 'Theme', theme_path, :class => class_names or 'flat' %>
-  <% class_names = active_tab == 'connect' ? 'flat-left active' : 'flat-left' %>
-  <%= link_to 'Connect', connect_path, :class => class_names or 'flat-left' %>  
-</ul>
+<div class='arrow_box'>
+  <ul class='header-categories'>  
+    <% class_names = active_tab == 'copy' ? 'flat-right active' : 'flat-right' %>
+    <%= link_to 'Copy', home_path, :class => class_names or 'flat-right' %>
+    <% class_names = active_tab == 'trailer' ? 'flat active' : 'flat' %>
+    <%= link_to 'Trailer', trailer_path, :class => class_names or 'flat' %>
+    <% class_names = active_tab == 'theme' ? 'flat active' : 'flat' %>
+    <%= link_to 'Theme', theme_path, :class => class_names or 'flat' %>
+    <% class_names = active_tab == 'connect' ? 'flat-left active' : 'flat-left' %>
+    <%= link_to 'Connect', connect_path, :class => class_names or 'flat-left' %>  
+  </ul>
+</div>
 
 <div class='header-divider'></div>
