@@ -4,9 +4,17 @@
   <p>*Depending upon the size of the file and your internet connection, upload time may vary. </p>
 </h1>
 <ul class='select-buttons'>
-<%= form_for @video, :url => videos_path(:action => 'create'), :html => {:multipart => true} do |f| %>
-  <%= f.file_field :video %>
-  <%= f.submit "Submit", :class => 'btn' %>
-<% end %>
+  <div class="devise-fields">
+    <%= form_for @video, :url => videos_path(:action => 'create'), :html => {:multipart => true} do |f| %>
+      <li>
+        <%= f.file_field :video %>
+      </li>
+      <li class='actions'>
+        <%= f.submit "Save", :class => 'btn' %>
+      </li>
+    <% end %>
+  </div>
 </ul>
+
+<div class="main-divider"></div>
 

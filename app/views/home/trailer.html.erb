@@ -1,2 +1,22 @@
 <%= render :partial => 'home/header_content' %>
 
+<h1 class='light'> Upload Your Trailer 
+  <p> Need to add a trailer uploader here </p>
+
+  <div class='devise-fields', style="margin-top: 10px">  
+    <%= semantic_form_for :video, :method => 'POST', :html => {:multipart => true} do |f| %>   
+      <%= f.error_messages %>
+
+      <%= f.input :embed_your_trailer %>
+      <%= f.input :caption, :placeholder => 'TODO:Need to make this a WYSIWYG editor'%>
+   
+      <%= f.actions do %>
+        <%= f.action :submit, :class => 'btn', :label => 'Save' %> 
+      <% end %>
+
+    <% end %>
+  </div>
+</h1>
+
+<div class='main-divider'></div>
+

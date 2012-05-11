@@ -65,7 +65,7 @@ select
   list-style: none
   input[type="text"], input[type="email"], input[type="password"]
     +input-base
-    width: 60%
+    width: 65%
     border: 1px solid #bbb
     background-color: white
     -moz-box-shadow: #eee 0 2px 5px
@@ -77,6 +77,8 @@ select
   input[type=submit]
     +button 
     margin: 10px 0
+  input[type=file]
+    margin: 0 0 10px 0
   div
     width: 300px
     margin: 0 auto 1em
@@ -85,6 +87,8 @@ select
     &.buttons
       text-align: center
       margin-top: 20px
+  li.actions
+    padding-left: 60%
 
 .checkbox
   margin: 0 10px
@@ -98,4 +102,4 @@ form.formtastic
     margin: 0
     padding: 0
   .actions
-    padding-left: 55%
+    padding-left: 60%
