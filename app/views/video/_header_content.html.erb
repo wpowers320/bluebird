@@ -1,7 +1,13 @@
 <%
     if params[:action] == 'new'
-      active_tab = 'movie' 
-    else
+      active_tab = 'movie'
+    end 
+    
+    if params[:action] == 'trailer'
+      active_tab = 'trailer'
+    end
+
+    if params[:action] == 'details'
       active_tab = 'details'
     end
   -%>
@@ -10,6 +16,8 @@
   <ul class='header-categories'>  
     <% class_names = active_tab == 'movie' ? 'flat-right active' : 'flat-right' %>
     <%= link_to 'Movie', videos_path, :class => class_names or 'flat-right' %>
+    <% class_names = active_tab == 'trailer' ? 'flat active' : 'flat' %>
+    <%= link_to 'Trailer', trailer_path, :class => class_names or 'flat' %>
     <% class_names = active_tab == 'details' ? 'flat-left active' : 'flat-left' %>
     <%= link_to 'Details', details_path, :class => class_names or 'flat-left' %>  
   </ul>

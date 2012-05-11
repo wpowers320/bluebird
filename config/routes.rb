@@ -5,13 +5,13 @@ Theatr::Application.routes.draw do
   match '/profile', :controller => :profile, :action => :profile, :as => :profile  
   match '/video(/:action)', :controller => :video, :action => :new, :as => 'videos'
   match '/video/details(/:action)', :controller => :video, :action => :details, :as => 'details' 
+  match '/video/trailer(/:action)', :controller => :video, :action => :trailer, :as => 'trailer'
 
   get "root/homepage"
 
   match 'static(/:action(.:format))', :controller => 'static', :as => 'static'
 
-  match '/home(/:action)', :controller => :home, :action => :index, :as => :home
-  match '/home/trailer(/:action)', :controller => :home, :action => :trailer, :as => 'trailer'
+  match '/home(/:action)', :controller => :home, :action => :index, :as => :home 
   match '/home/theme(/:action)', :controller => :home, :action => :theme, :as => 'theme'
   match '/home/connect(/:action)', :controller => :home, :action => :connect, :as => 'connect'
 

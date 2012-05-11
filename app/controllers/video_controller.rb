@@ -16,5 +16,9 @@ class VideoController < ApplicationController
   end
 
   def details
-  end  
+  end 
+
+  def trailer
+  end
+ 
 end
