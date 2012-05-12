@@ -1,4 +1,68 @@
+<%
+    if params[:action] == 'about'
+      active_tab = 'about' 
+    end
+ 
+    if params[:action] == 'faq'
+      active_tab = 'faq'
+    end
+    
+    if params[:action] == 'team'
+      active_tab = 'team'
+    end
+
+    if params[:action] == 'contact'
+      active_tab = 'contact'
+    end
+
+    if params[:action] == 'content_policy'
+      active_tab = 'content policy'
+    end
+
+    if params[:action] == 'terms_of_service'
+      active_tab = 'terms of service'
+    end
+
+    if params[:action] == 'privacy_policy'
+      active_tab = 'privacy policy'
+    end
+
+  -%>
+
+
+
 <% if params[:action] == 'theme' %>
+<% elsif params[:controller] == 'static' %>
+  <ul class='rs-category-select'> 
+    <li> 
+      <% class_names = active_tab == 'about' ? 'flat-bottom active about' : 'flat-bottom about' %>
+      <%= link_to 'About', static_path(:about), :class => class_names or 'flat-bottom about' %>
+    </li>
+    <li>
+      <% class_names = active_tab == 'faq' ? 'flat active faq' : 'flat faq' %>
+      <%= link_to 'FAQ', static_path(:faq), :class => class_names or 'flat faq' %>    
+    </li>
+    <li>
+      <% class_names = active_tab == 'team' ? 'flat active team' : 'flat team' %>
+      <%= link_to 'Team', static_path(:team), :class => class_names or 'flat team' %>    
+    </li>
+    <li>
+      <% class_names = active_tab == 'contact' ? 'flat active contact' : 'flat contact' %>
+      <%= link_to 'Contact', static_path(:contact), :class => class_names or 'flat contact' %>    
+    </li>
+    <li>
+      <% class_names = active_tab == 'content policy' ? 'flat active content-policy' : 'flat content-policy' %>
+      <%= link_to 'Content Policy', static_path(:content_policy), :class => class_names or 'flat content-policy' %>    
+    </li>
+    <li>
+      <% class_names = active_tab == 'terms of service' ? 'flat active terms-of-service' : 'flat terms-of-service' %>
+      <%= link_to 'Terms of Service', static_path(:terms_of_service), :class => class_names or 'flat terms-of-service' %>    
+    </li>
+    <li>
+      <% class_names = active_tab == 'privacy policy' ? 'flat-top active privacy-policy' : 'flat-top privacy-policy' %>
+      <%= link_to 'Privacy Policy', static_path(:privacy_policy), :class => class_names or 'flat-top privacy-policy' %>    
+    </li>
+  </ul>
 <% else %>
   <ul class='categories'>  
     <li class='btn flat-bottom'>
@@ -17,6 +81,7 @@
       <%= link_to 'Messages', '#', :class => '' %>
     </li>
   </ul>
-
-
 <% end %>
+
+
+

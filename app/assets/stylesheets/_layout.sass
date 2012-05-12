@@ -1,3 +1,5 @@
+@import forms
+
 // setting width with variables for everything may seem like overkill but will be worth it in the end :)
 $site-width: 1120px
 $content-outer-width: 760px
@@ -212,6 +214,48 @@ body
   float: left
   min-width: 300px
   min-height: 300px
+  ul.rs-category-select
+    padding: 10px
+    margin-top: -1px
+    li
+      list-style: none
+      margin-top: 17px
+    a.flat-bottom
+      +button
+      +border-bottom-right-radius(0)
+      +border-bottom-left-radius(0)
+    a.flat
+      +button
+      +border-radius(0)
+    a.flat-top
+      +button
+      +border-top-right-radius(0)
+      +border-top-left-radius(0)
+    a.new-section
+      margin-top: 20px
+    a.active
+      -webkit-box-shadow: inset 0 0 2px 2px rgba(0,0,0,.1)
+      -moz-box-shadow: inset 0 0 2px 2px rgba(0,0,0,.1)
+      box-shadow: inset 0 0 2px 2px rgba(0,0,0,.1) 
+      background-image: -webkit-linear-gradient(top,#EEE,#E0E0E0)
+      background-image: -moz-linear-gradient(top,#EEE,#E0E0E0)
+      background-image: -ms-linear-gradient(top,#EEE,#E0E0E0)
+      background-image: -o-linear-gradient(top,#EEE,#E0E0E0)
+      background-image: linear-gradient(top,#EEE,#E0E0E0)
+    a.about
+      padding: 8px 201px 8px 10px
+    a.faq
+      padding: 8px 214px 8px 10px
+    a.team
+      padding: 8px 206px 8px 10px
+    a.contact
+      padding: 8px 188px 8px 10px
+    a.content-policy
+      padding: 8px 136px 8px 10px
+    a.terms-of-service
+      padding: 8px 120px 8px 10px
+    a.privacy-policy
+      padding: 8px 140px 8px 10px
   ul.categories
     padding: 10px
     margin-top: 7px

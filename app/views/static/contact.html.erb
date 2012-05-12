@@ -1,32 +1,32 @@
-<div id="static">
-  <h1><strong>Contact</strong></h1>
+<div id='static_same_main'>  
+  <h1>
+    <strong>Contact
+    </strong>
+  </h1>
+</div>
 
+<div class='header-divider'>
+</div>
+
+<div id='static_same_main'>
   <p>Copy goes here!</p> 
-
   <div>
     <%= form_for :email, :url => { :controller => 'static', :action => 'send_mail' } do |f| %>
-  
       <div> 
         <%= f.text_field :name, :placeholder => 'Name', :class => "landing-form-field", :id => "xlInput" %>
-      </div>
-    
+      </div>    
       <div>
         <%= f.email_field :email, :placeholder => 'Email', :class => "landing-form-field", :id => "xlInput" %>
-      </div>
-    
+      </div>    
       <div>
         <%= f.select :subject, ['Subject', 'General', 'Bugs & Problems', 'Feature Requests', 'Founders', 'Client Relations', 'Public Relations'], "id"=>"normalSelect" %>
       </div>
-    
       <div>  
         <%= f.text_area :comments, :placeholder => 'Comments...', :class => "landing-form-field", :rows => 5 %>
-      </div>
-    
+      </div>    
       <div>
         <%= f.submit 'Submit', :class => "btn", :style => 'margin-bottom: 20px' %>
-      </div>
-  
+      </div>  
     <% end %>
   </div>
 </div>
-
