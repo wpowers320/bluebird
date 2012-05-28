@@ -4,49 +4,22 @@ class Mailer < ActionMailer::Base
   )
 
   default(
-    :from => App.email 
+    :from => 'info@theatr.co'
   )
-
-  def new_event_notification(event)
-    @event   = event
-    @subject = subject_for("New event!")
-    mail(:to => 'will@theatr.co', :subject => @subject)
-  end
-
+  
   def test(email)
-    mail(:to => email, :subject => 'test')
+    mail(:to => email, :from => 'will@theatr.co', :subject => 'test')
   end
 
   def contact_email(email_params)
-    @recipients = 'will@theatr.co'
-    @from = email_params[:name]
-    @subject = email_params[:subject] 
-    @body["email_body"] = email_params[:comments]
-    @body["email_name"] = email_params[:name]
-    @email = email_params[:email]
-    content_type "text/html"
-  end
-
-  def advertise_email(email_params)
-    @recipients = 'will@theatr.co'
-    @from = 'will@theatr.co' 
-    @company = email_params[:company]
-    @subscription = email_params[:subscription]
-    @featuring_events = email_params[:featuring_events]
-    @social_media = email_params[:social_media]
-    @non_profit = email_params[:non_profit]
-    @body["email_body"] = email_params[:comments]
-    @body["email_name"] = email_params[:name]
-    @budget = email_params[:budget]
-    @phone = email_params[:phone]
-    @start = email_params[:begin]
-    @first_name = email_params[:first_name]
-    @last_name = email_params[:last_name]
-    @email = email_params[:email]
-    @city = email_params[:city]
-    @agency = email_params[:agency]
-    mail(:to => 'will@theatr.co', :subject => 'Advertising Request')
-    content_type "text/html"
+    mail(
+      :to => 'will@theatr.co',
+      :from => email_params[:email],
+      :subject => email_params[:subject],
+      :body => email_params[:comments],
+      :email => email_params[:email],
+      :content_type => 'text/html',
+    )
   end
 
 protected

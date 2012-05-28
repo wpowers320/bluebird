@@ -32,3 +32,4 @@ class StaticController < ApplicationController
     flash[:notice] = 'Your email has been sent, we will get back to you shortly.'
   end
 end
+

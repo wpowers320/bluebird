@@ -1,20 +1,17 @@
-
 if Rails.env.production? or ENV['RAILS_EMAIL']
   Rails.configuration.action_mailer.delivery_method = :smtp
   Rails.configuration.action_mailer.perform_deliveries = true
   Rails.configuration.action_mailer.raise_delivery_errors = true
 
   Rails.configuration.action_mailer.smtp_settings = {
-    #:user_name            => 'lokalite@lokalite.com',
-    #:password             => 'Lokalblue!',
-    :user_name            => 'will@theatr.co',
-    :password             => 'y_E:$dx0!:@H',
-    :domain               => 'gmail.com',
-
     :address              => 'smtp.gmail.com',
     :port                 => 587,
+    :domain               => 'gmail.com',
     :authentication       => :plain,
-    :enable_starttls_auto => :true
+    :user_name            => 'info@theatr.co',
+    :password             => 'secret_pswd',
+    :enable_starttls_auto => :true,
+    :tls                  => :true,
   }
 
   abort("YOU NEED TO EDIT #{ File.expand_path(__FILE__) }") if
