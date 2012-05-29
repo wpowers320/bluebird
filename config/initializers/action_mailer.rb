@@ -11,7 +11,6 @@ if Rails.env.production? or ENV['RAILS_EMAIL']
     :user_name            => 'info@theatr.co',
     :password             => 'secret_pswd',
     :enable_starttls_auto => :true,
-    :tls                  => :true,
   }
 
   abort("YOU NEED TO EDIT #{ File.expand_path(__FILE__) }") if

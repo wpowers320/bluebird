@@ -13,7 +13,7 @@ class Mailer < ActionMailer::Base
 
   def contact_email(email_params)
     mail(
-      :to => 'will@theatr.co',
+      :to => 'info@theatr.co',
       :from => email_params[:email],
       :subject => email_params[:subject],
       :body => email_params[:comments],
