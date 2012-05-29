@@ -32,9 +32,11 @@ Devise.setup do |config|
   # Invoke `rake secret` and use the printed value to setup a pepper to generate
   # the encrypted password. By default no pepper is used.
   # config.pepper = "rake secret output"
-
-  # Configure how many times you want the password is reencrypted. Default is 10.
-  # config.stretches = 10
+  #
+  # Limiting the stretches to just one in testing will increase the performance of
+  # your test suite dramatically. However, it is STRONGLY RECOMMENDED to not use
+  # a value less than 10 in other environments.
+  config.stretches = Rails.env.test? ? 1 : 10
 
   # Define which will be the encryption algorithm. Supported algorithms are :sha1
   # (default), :sha512 and :bcrypt. Devise also supports encryptors from others
@@ -83,6 +85,11 @@ Devise.setup do |config|
 
   # Time interval to unlock the account if :time is enabled as unlock_strategy.
   # config.unlock_in = 1.hour
+
+  # Time interval you can reset your password with a reset password key.
+  # Don't put a too small interval or your users won't have the time to
+  # change their passwords.
+  config.reset_password_within = 2.hours
 
   # ==> Configuration for :token_authenticatable
   # Defines name of the authentication token params key
