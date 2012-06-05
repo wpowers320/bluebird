@@ -16,18 +16,18 @@
       active_tab = 'payments' 
     end
   -%>
-<nav>
+<nav>  
   <ul class='categories'>  
     <li>
-      <% class_names = active_tab == 'home' ? 'home active' : 'home' %>
+      <% class_names = active_tab == 'home' ? 'home active arrow_box' : 'home' %>
       <%= link_to 'Home', home_path, :class => class_names or 'home' %>
     </li>
     <li>
-      <% class_names = active_tab == 'movie' ? 'movie active' : 'movie' %>
+      <% class_names = active_tab == 'movie' ? 'movie active arrow_box movie_arrow' : 'movie' %>
       <%= link_to 'Movie', videos_path, :class => class_names or 'movie' %>  
     </li>
     <li>
-      <% class_names = active_tab == 'payments' ? 'payments active' : 'payments' %>
+      <% class_names = active_tab == 'payments' ? 'payments active arrow_box payments_arrow' : 'payments' %>
       <%= link_to 'Payments', payments_path, :class => class_names or 'payments' %> 
     </li>
   </ul>

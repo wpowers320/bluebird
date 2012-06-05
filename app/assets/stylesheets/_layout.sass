@@ -173,6 +173,8 @@ body
   float: left 
   ul.categories
     padding: 0 40px
+    position: fixed
+    z-index: 1030
     li
       font-size: 16px
       font-weight: bold
@@ -204,7 +206,32 @@ body
         max-height: 0
       a.payments
         background-image: url('/images/payments_icon.png')
-        max-height: 0  
+        max-height: 0 
+  .arrow_box
+    position: relative 
+  .arrow_box:after, .arrow_box:before 
+    right: -60%
+    border: solid transparent
+    content: " "
+    height: 0
+    width: 0
+    position: absolute
+    pointer-events: none
+  .arrow_box:after 
+    border-right-color: white
+    border-width: 15px
+    top: 80%
+    margin-top: -20px
+  .arrow_box:before 
+    border-right-color: #bbb
+    border-width: 16px
+    top: 80%
+    margin-top: -21px
+  .movie_arrow:after, .movie_arrow:before
+    top: 80% 
+  .payments_arrow:after, .payments_arrow:before
+    top: 80% 
+ 
 
 #right-sidebar
   background: white
@@ -213,7 +240,10 @@ body
   margin: 0 10px 0 40px
   float: left
   min-width: 300px
-  min-height: 300px
+  //min-height: 300px
+  position: fixed
+  z-index: 1030
+  left: 1040px
   ul.rs-category-select
     padding: 10px
     margin-top: -1px
