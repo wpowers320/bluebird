@@ -124,6 +124,7 @@ GEM
       multi_json (>= 1.0.2)
     warden (1.1.1)
       rack (>= 1.0)
+    wysihtml5-rails (0.0.2)
 
 PLATFORMS
   ruby
@@ -139,3 +140,4 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
+  wysihtml5-rails

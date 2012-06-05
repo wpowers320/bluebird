@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require_tree
+//= require wysihtml5/parser_rules/simple
+//= require wysihtml5/wysihtml5  
 $('.user-name').click(function(e) {
   e.preventDefault();
   return $('.dropdown-menu').toggle();

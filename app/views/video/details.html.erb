@@ -6,7 +6,65 @@
       <%= f.error_messages %>
 
       <%= f.input :movie_title %>
-      <%= f.input :details, :placeholder => 'TODO:Need to make this a WYSIWYG editor'%>
+
+      <br>
+
+      <div id="wysihtml5-editor-toolbar" style="display: none">
+      <header class='top-toolbar'>
+        <ul class="commands">
+          <li data-wysihtml5-command="bold" title="Make text bold (Ctrl + B)"></li>
+          <li data-wysihtml5-command="italic" title="Make text bold (Ctrl + I)"></li>
+          <li data-wysihtml5-command="underline" title="Make text bold (Ctrl + U)"></li>
+          <li data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1" title="Insert Headline 1"></li>
+          <li data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2" title="Insert Headline 2"></li>
+
+          <li data-wysihtml5-command-group="foreColor" class="fore-color" title="Color the selected text">
+            <ul>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="silver"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="gray"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="maroon"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="purple"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="olive"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="navy"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue"></li>
+            </ul>
+          </li>
+        </ul>
+      </header> 
+
+      <header class='bottom-toolbar'>
+        <ul class="commands">
+          <li data-wysihtml5-command="insertOrderedList" title="Insert an ordered list"></li>
+          <li data-wysihtml5-command="insertUnorderedList" title="Insert an unordered list"></li>         
+          <li data-wysihtml5-command="createLink" title="Insert a link"></li>
+          <li data-wysihtml5-command="insertImage" title="Insert an image"></li>
+          <li data-wysihtml5-command="insertSpeech" title="Insert Speech"></li>
+          <li data-wysihtml5-action="change_view" title="Show HTML"></li>
+        </ul>
+      </header>
+  
+      <div data-wysihtml5-dialog="createLink" style="display: none;">
+        <label>
+          Link: <input data-wysihtml5-dialog-field="href" value="http://" class="text">
+        </label>
+        <a data-wysihtml5-dialog-action="save">OK</a>
+        <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+      </div>
+          
+      <div data-wysihtml5-dialog="insertImage" style="display: none;">
+        <label>
+          Image: <input data-wysihtml5-dialog-field="src" value="http://" class="text">
+        </label>
+        <a data-wysihtml5-dialog-action="save">OK</a>
+        <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+      </div>
+    </div>
+
+    <br>
+
+      <%= f.text_area :details, :placeholder => 'Movie Details', :id => 'wysihtml5-textarea', :style => 'width: 65%'%>
    
       <%= f.actions do %>
         <%= f.action :submit, :class => 'btn', :label => 'Save' %> 
@@ -18,3 +76,10 @@
 
 <div class='main-divider'></div>
 
+<script>
+  var editor = new wysihtml5.Editor("wysihtml5-textarea", {
+    toolbar:      "wysihtml5-editor-toolbar",
+    stylesheets:  "<%= stylesheet_path('wysiwyg') %>", 
+    parserRules:  wysihtml5ParserRules
+  });
+</script>
