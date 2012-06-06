@@ -19,7 +19,7 @@
       <%= link_to 'Settings', '#', :class => 'settings' %>
       <%= link_to 'Help Center', static_path(:faq), :class => 'help' %>
     </li>
-    <% else %>
+    <% elsif params[:controller] == 'root' %>
 
     <script type="text/javascript">
       $(document).ready(function(){
@@ -49,11 +49,15 @@
             </div></br>
               <%= f.submit "Sign in", :class => "btn signin" %>
             </br></br> 
-            <%= link_to "Forgot your password?", '/users/password/new', :id => "forgot_password" %>
+            <%= link_to "Forgot your password?", new_password_path(:user), :id => "forgot_password" %>
           <% end %>
         </li>
       </ul>
       </div>
+    </li>
+    <% else %>
+    <li class='user-name'>
+      <%= link_to 'Sign In', new_session_path(:user) %>
     </li>
     <% end %>
   </ul>
