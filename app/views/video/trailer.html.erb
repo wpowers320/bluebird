@@ -1,16 +1,19 @@
 <%= render :partial => 'video/header_content' %>
 
 <h1 class='light'> Upload Your Trailer 
-  <p> Need to add a trailer uploader here </p>
+  <p style='margin-bottom: 20px'> Need to add a trailer uploader here </p>
 
-  <div class='devise-fields', style="margin-top: 10px">  
+  <div class='devise-fields'>  
     <%= semantic_form_for :video, :method => 'POST', :html => {:multipart => true} do |f| %>   
       <%= f.error_messages %>
 
-      <%= f.input :embed_your_trailer %>
-
-      <br>
-
+      <div class= 'embed'>
+        <h4> Embed your trailer 
+        <div class='embedrf'> *This can be from YouTube or Vimeo </div></h4>
+      </div>
+      <%= f.text_field :embed_your_trailer %>  
+      
+      <h4> Trailer Caption </h4>
       <div id="wysihtml5-editor-toolbar" style="display: none">
       <header class='top-toolbar'>
         <ul class="commands">
@@ -62,11 +65,9 @@
         <a data-wysihtml5-dialog-action="save">OK</a>
         <a data-wysihtml5-dialog-action="cancel">Cancel</a>
       </div>
-    </div>
-   
-    <br>
+    </div> 
 
-      <%= f.text_area :caption, :placeholder => 'Trailer Caption', :id => 'wysihtml5-textarea', :style => 'width: 65%'%>
+      <%= f.text_area :caption, :placeholder => '', :id => 'wysihtml5-textarea', :style => 'width: 65%'%>
    
       <%= f.actions do %>
         <%= f.action :submit, :class => 'btn', :label => 'Save' %> 

@@ -45,7 +45,7 @@ $error-red: #cc0000
 .btn
   +button 
 
-/* style used for non-header selection menus */
+// style used for non-header selection menus //
 
 select 
   display: inline-block
@@ -63,7 +63,7 @@ select
 .devise-fields
   //text-align: center
   list-style: none
-  input[type="text"], input[type="email"], input[type="password"], #wysihtml5-textarea
+  input[type="text"], input[type="email"], input[type="password"]
     +input-base
     width: 65%
     border: 1px solid #bbb
@@ -89,6 +89,20 @@ select
       margin-top: 20px
   li.actions
     padding-left: 60%
+  #wysihtml5-textarea
+    +input-base
+    width: 65%
+    border: 1px solid #bbb
+    background-color: white
+    -moz-box-shadow: #eee 0 2px 5px
+    -webkit-box-shadow: #eee 0 2px 5px
+    -o-box-shadow: #eee 0 2px 5px
+    box-shadow: #eee 0 2px 5px
+    +border-bottom-radius(5px)
+    margin: 0 0 10px
+    color: #bbb
+    &:focus
+      color: black 
 
 .checkbox
   margin: 0 10px
@@ -104,11 +118,13 @@ form.formtastic
   .actions
     padding-left: 60%
 
-//WYSIHTML5 SASS
+// WYSIHTML5 SASS //
+
 #wysihtml5-editor-toolbar 
   position: relative
+  margin-top: 10px
   .bottom-toolbar
-    +border-top-radius(0)
+    +border-radius(0)
     border-top: none
   .top-toolbar
     +border-bottom-radius(0) 
@@ -296,7 +312,8 @@ form.formtastic
     &:hover 
       +background(linear-gradient(color-stops(darken(#231f20,8), darken(#231f20, 8))))
 
-//WYSIHTML5 Display SASS
+// WYSIHTML5 Display SASS //
+
 //section 
   position: absolute
   width: 810px
@@ -321,5 +338,15 @@ form.formtastic
       box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
       background: rgba(255, 255, 255, 0.4)
       outline: 0
+
+.embedrf
+  float: right 
+  font-style: italic
+  display: block
+  font-size: 0.83em
+
+.embed
+  width: 555px
+    
 
 
