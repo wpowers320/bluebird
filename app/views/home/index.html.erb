@@ -14,15 +14,15 @@
 
           <li data-wysihtml5-command-group="foreColor" class="fore-color" title="Color the selected text">
             <ul>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="silver"></li>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="gray"></li>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="maroon"></li>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red"></li>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="purple"></li>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green"></li>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="olive"></li>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="navy"></li>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="silver" class="color-fix"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="gray" class="color-fix"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="maroon" class="color-fix"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red" class="color-fix"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="purple" class="color-fix"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green" class="color-fix"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="olive" class="color-fix"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="navy" class="color-fix"></li>
+              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue" class="color-fix"></li>
             </ul>
           </li>
         </ul>
@@ -63,7 +63,7 @@
       <%= f.text_area :body, :placeholder => "<u><i>Example</i></u> <p> To those who might wish to 'torrent' this movie: <p>
 Look, we don't really get the whole 'torrent' thing. But we'd just like you to consider this: we made these files extremely easy to use against well-informed advice and industry norms. We were told that it would be easier to torrent the way we made it, but we chose to do it this way anyway because we want it to be easy for people to watch and enjoy this movie in any way they want without 'corporate' restrictions. <p> A lot of hard work went into the production and posting of this video with our own and our producers' money. We would like to be able to post more material to the fans in this way, which makes it cheaper for you and more pleasant for us to perform our craft. So, please help us keep this being a good idea. We can't stop you from torrenting; all we can do is politely ask you to pay your small fee, enjoy the show, and let other people find it in the same way. <p>
 Sincerely, <p>
-Your friends at 'Movie Title'", :id => 'wysihtml5-textarea'%>
+Your friends at 'Movie Title'", :id => 'wysihtml5-textarea', :style => 'width: 96%'%>
    
       <%= f.actions do %>
         <%= f.action :submit, :class => 'btn', :label => 'Save' %> 
