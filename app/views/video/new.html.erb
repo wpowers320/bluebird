@@ -1,8 +1,8 @@
 <%= render :partial => 'video/header_content' %>
 
-<h1 class='light'> Upload Your Movie
-  <p>*Depending upon the size of the file and your internet connection, upload time may vary. </p>
-</h1>
+<div class='light'> Upload Your Movie
+  <h5>*Depending upon the size of the file and your internet connection, upload time may vary. </h5>
+</div>
 <ul class='select-buttons'>
   <div class="devise-fields">
     <%= form_for @video, :url => videos_path(:action => 'create'), :html => {:multipart => true} do |f| %>

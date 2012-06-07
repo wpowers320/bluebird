@@ -19,6 +19,7 @@ Theatr::Application.routes.draw do
   match '/payments/billing(/:action)', :controller => :payments, :action => :billing, :as => 'billing'
 
   match '/settings(/:action)', :controller => :settings, :action => :index, :as => :settings
+  match '/setting/user(/:action)', :controller => :settings, :action => :user_settings, :as => 'user_settings'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

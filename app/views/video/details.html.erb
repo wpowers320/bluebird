@@ -1,6 +1,6 @@
 <%= render :partial => 'video/header_content' %>
 
-<h1 class='light'> 
+<div class='light'> 
   <div class='devise-fields'>  
     <%= semantic_form_for :video, :method => 'POST', :html => {:multipart => true} do |f| %>   
       <%= f.error_messages %>
@@ -61,7 +61,7 @@
       </div>
     </div>  
 
-      <%= f.text_area :details, :placeholder => '', :id => 'wysihtml5-textarea', :style => 'width: 65%'%>
+      <%= f.text_area :details, :placeholder => '', :id => 'wysihtml5-textarea'%>
    
       <%= f.actions do %>
         <%= f.action :submit, :class => 'btn', :label => 'Save' %> 
@@ -69,7 +69,7 @@
 
     <% end %>
   </div>
-</h1>
+</div>
 
 <div class='main-divider'></div>
 
