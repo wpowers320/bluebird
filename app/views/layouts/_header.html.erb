@@ -41,14 +41,14 @@
       <ul class="dropdown-menu sign-in">
         <li>  
           <%= form_for :user, :url => session_path(:user) do |f| %>
-            <div></br>
+            <div>
               <%= f.email_field :email, :placeholder => "Email", :class => "dropdown-form-field" %>
             </div>
             <div>
               <%= f.password_field :password, :placeholder => "Password", :class => "dropdown-form-field" %>
-            </div></br>
+            </div>
               <%= f.submit "Sign in", :class => "btn signin" %>
-            </br></br> 
+             
             <%= link_to "Forgot your password?", new_password_path(:user), :id => "forgot_password" %>
           <% end %>
         </li>

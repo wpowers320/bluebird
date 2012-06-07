@@ -29,14 +29,17 @@ body.root-controller
     border: 1px solid #CCC
     -webkit-box-shadow: inset 0 1px 0 #EEE,white 0 1px 0
     -moz-box-shadow: inset 0 1px 0 #EEE,white 0 1px 0
-    box-shadow: inset 0 1px 0 #EEE,white 0 1px 0  
-  
+    box-shadow: inset 0 1px 0 #EEE,white 0 1px 0
+    color: #ccc
+    &:focus
+      color: black  
+        
   .dropdown-form-field
     font-size: 16px
     +border-radius(5px)
     width: $form-width 
     padding: 8px 10px
-    margin: 10px 0 
+    margin: 0 0 10px 0 
     border: 1px solid #CCC
     -webkit-box-shadow: inset 0 1px 0 #EEE,white 0 1px 0
     -moz-box-shadow: inset 0 1px 0 #EEE,white 0 1px 0
@@ -44,7 +47,46 @@ body.root-controller
 
   .signup
     padding: 0 10px
-    margin: auto 200px
+    margin: auto 204px
+
+  #content
+    +centered-on-page 
+    .logo-wrap
+      width: 190px
+      .homepage-logo
+        background-image: url('/images/logo.png')
+        display: block
+        overflow: hidden 
+        background-repeat: no-repeat
+        background-position: 50% 50%
+        width: 450px
+        height: 100px
+        margin: 0 0 74px 85px
+
+#forgot_password
+  text-decoration: none
+  color: #666
+  float: right
+  margin: 9px 0 0 0
+  &:hover
+    text-decoration: underline
+    color: black
+
+#intro
+  margin: 0 224px 74px 224px
+  height: 259px
+  .video
+    border: 1px solid #fff
+    width: 461px
+    height: 259px
+    box-shadow: #999 0 2px 5px
+    float: left
+  .text
+    float: right
+    width: 467px
+    margin-top: -6px
+    .m0
+      margin: 0
 
 #static
   min-width: 1025px

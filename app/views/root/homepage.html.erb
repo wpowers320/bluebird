@@ -5,12 +5,23 @@
   </div>
 </div>
 
+<div id='intro'>
+  <div class='video'>
+    Intro video goes here
+  </div>
+  <div class='text'>
+    <h1 class='m0'> One liner about how fucking awesome we are </h1>
+    <h3> Demo video intro and link to Demo video (Demo video and subdomain should both be from our hosted platform) </h3>
+    <h5> More about the benefits of Theatr.co with some icons (similar to Gumroad) </h5>
+  </div>
+</div>
+
 <div>
   <%= form_for(:user, :url => registration_path(:user)) do |f| %>
     <div class='signup'>
       <%= f.email_field :email, :placeholder => "Email Address", :class => "landing-form-field" %>
       <%= f.password_field :password, :placeholder => "Password", :class => "landing-form-field" %>
-      <!-- <%= f.url_field :user, :placeholder=> ".theatr.co", :class => "landing-form-field" %> -->
+      <!-- <%= f.url_field :user, :value => ".theatr.co", :class => "landing-form-field" %> -->
       <%= f.submit 'Get Started!', :class => "submit btn" %>
     </div>
   <% end %>
