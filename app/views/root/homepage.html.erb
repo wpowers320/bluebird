@@ -7,10 +7,10 @@
 
 <div id='intro'>
   <div class='video'>
-    <iframe src="http://player.vimeo.com/video/26178772" width="457" height="255" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>  
+    <iframe src="http://player.vimeo.com/video/26178772" width="457" height="266" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>  
   </div> <!-- <=intro video that describes theatr -->
   <div class='text'>
-    <h1 class='m0'> Share and sell your movie across the interwebs. </h1>
+    <h1 class='m0'> Share and sell your movies across the interwebs. </h1>
     <h3> Distributing and monetizing your movie, without giving up a bunch of rights, has always been a pain in the ass. Not anymore. Keep control! <a href="#">See a demo</a>.</h3>
     <ul>
       <li class='homepage1'>
@@ -29,8 +29,10 @@
   <%= form_for(:user, :url => registration_path(:user)) do |f| %>
     <div class='signup'>
       <%= f.email_field :email, :placeholder => "Email Address", :class => "landing-form-field" %>
-      <%= f.password_field :password, :placeholder => "Password", :class => "landing-form-field" %>
-      <!-- <%= f.url_field :user, :value => ".theatr.co", :class => "landing-form-field" %> -->
+      <%= f.password_field :password, :placeholder => "Password", :class => "landing-form-field" %> 
+      <span class="domain">.theatr.co</span>
+      <%= f.url_field :subdomain, :placeholder => "Custom URL", :class => "landing-form-field subdomain" %> 
+      
       <%= f.submit 'Get Started!', :class => "submit btn" %>
     </div>
   <% end %>
