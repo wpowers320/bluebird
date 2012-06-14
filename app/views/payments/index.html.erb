@@ -1,4 +1,18 @@
 <%= render :partial => 'payments/header_content' %>
 
-<div class='light'> Payment Details this is where information for payment remittance will go
+<div class='light'>
+  <div class='devise-fields'>
+    <h4> Payment Details </h4>
+    <%= semantic_form_for :user do |f| %>
+      <%= f.error_messages %>
+      <%= f.input :name, :placeholder => 'Your Name', :label => false %>
+      <%= f.input :address, :placeholder => 'Address', :label => false %>
+      <%= f.input :city, :placeholder => 'City', :label => false %>
+      <%= f.select :state, US_STATES, :placeholder => 'State', :label => false %>
+      <%= f.input :zip_code, :placeholder => 'Zip Code', :label => false %>
+      <li class='actions'>
+        <%= f.submit "Save", :class => 'btn' %>
+      </li>
+    <% end %>
+  </div>
 </div>
