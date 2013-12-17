@@ -1,6 +1,13 @@
-Theatr::Application.routes.draw do 
+Bluebird::Application.routes.draw do 
 
   devise_for :users
+
+  devise_scope :user do
+    get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
+  end
+
+  get '/auth/twitter/callback', to: 'sessions#create', as: 'callback'
+  delete '/signout', to: 'sessions#destroy', as: 'signout'
 
   match '/profile', :controller => :profile, :action => :profile, :as => :profile  
   match '/video(/:action)', :controller => :video, :action => :new, :as => 'videos'
@@ -20,6 +27,9 @@ Theatr::Application.routes.draw do
 
   match '/settings(/:action)', :controller => :settings, :action => :index, :as => :settings
   match '/setting/user(/:action)', :controller => :settings, :action => :user_settings, :as => 'user_settings'
+
+  
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

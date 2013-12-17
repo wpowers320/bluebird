@@ -1,12 +1,24 @@
-<nav>
-<ul>
-  <li>
-    &copy; Theatr, Inc
-    <%= link_to 'Home', root_path %>
-    <%= link_to 'How It Works', static_path(:how_it_works) %> <!-- this should probably link to the demo from the homepage -->
-    <%= link_to 'About', static_path(:about) %> 
-  </li>
-  </ul>
-</nav>
+<div class="navbar navbar-fixed-bottom">
+  <div class="container">
+  <% if user_signed_in? %>
+    <p class="col-md-offset-5">
 
+      &copy; bluebird 
+      <%= link_to 'Home', home_path, :class => "p5" %> 
+      <%= link_to 'FAQ', static_path(:how_it_works), :class => "p5" %> <!-- this should probably link to the demo from the homepage -->
+      <%= link_to 'About', static_path(:about), :class => "p5" %> 
+  
+    </p>
+  <% else %>
+    <p class="col-md-offset-5">
+
+      &copy; bluebird 
+      <%= link_to 'Home', root_path, :class => "p5" %> 
+      <%= link_to 'FAQ', static_path(:how_it_works), :class => "p5" %> <!-- this should probably link to the demo from the homepage -->
+      <%= link_to 'About', static_path(:about), :class => "p5" %> 
+  
+    </p>
+  <% end %>
+  </div>
+</div>
 

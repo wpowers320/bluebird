@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require_tree
 //= require wysihtml5/parser_rules/simple
 //= require wysihtml5/wysihtml5  

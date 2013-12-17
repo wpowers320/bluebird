@@ -1,4 +1,5 @@
 class RootController < ApplicationController
+
   def index
     if user_signed_in? 
       redirect_to home_path
@@ -7,3 +8,5 @@ class RootController < ApplicationController
     end 
   end
 end
+
+

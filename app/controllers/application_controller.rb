@@ -6,4 +6,5 @@ class ApplicationController < ActionController::Base
   end
   helper_method :fullpath
 
+  private
 end

@@ -23,10 +23,19 @@ group :assets do
   # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+
+  gem 'twitter-bootstrap-rails'
+  gem 'therubyracer'
+  gem 'less'
 end
 
 gem 'devise', '2.0.4'
 gem 'jquery-rails'
+gem 'less-rails'
+
+gem 'omniauth-twitter'
+gem 'twitter'
+gem 'omniauth'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

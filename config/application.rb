@@ -18,7 +18,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Theatr
+module Bluebird
   class Application < Rails::Application
     config.autoload_paths += %w( lib app )
    

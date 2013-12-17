@@ -1,2 +1,7 @@
-
+<div>
+  <% Favorites.order("created_at desc").each do |favorites| %>
+    <blockquote> <%= favorites.text %></blockquote>
+    <div> &mdash; @<%= favorites.screen_name %></div>
+  <% end %>
+</div>
 

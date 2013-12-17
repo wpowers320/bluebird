@@ -1,43 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Theatr</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+    <title>bluebird</title>
 
-<body class="<%= params[:controller].parameterize %>-controller">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+   
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
 
-  <header>
-    <div class='content'>
-      <%= render :partial => 'layouts/header' %>
-    </div>
-  </header>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %> 
+  </head>
 
   <% if params[:controller] == 'root' %>
-    <%= yield %>
-  <% else %> 
-    <div id='main'>
-      <div id="left-sidebar">
-        <%= render(:partial => 'layouts/left_sidebar') %>
-      </div>
-      <div id='middle'>
-        <%= yield %>
-      </div>
-      <% unless ['/static/how_it_works', '/users'].any? {|path| fullpath.start_with?(path)} || fullpath == '/' %>
-      <div id="right-sidebar">
-        <%= render(:partial => '/layouts/right_sidebar') %>
-      </div>
-      <% end %>
-    </div>
+  <body class="root-controller">
+  <% else %>
+  <body>
   <% end %>
+    <header>
+      <%= render :partial => 'layouts/header' %> 
+    </header>
 
-  <footer>
-    <div class='content'>
-      <%= render :partial => 'layouts/footer' %>
-    </div>
-  </footer>
+    <% if params[:controller] == 'root' %>
+      <div class="container-fluid">
+        <div class = "row-fluid">
+         <%= yield %>  
+        </div>
+      </div>
+    <% else %> 
+      <div class="container-fluid">
+        <div class = "row-fluid">
+          <div class= "span3"></div>
+          <div class = "span9"> <% yield %></div>
+        </div>
+      </div>
+    <% end %>
 
-</body>
+    <footer> 
+      <%= render :partial => 'layouts/footer' %> 
+    </footer>
+  </body>
 </html>

@@ -1,39 +1,27 @@
-<div id='content'>
-  <div class='logo-wrap'>
-    <div class='homepage-logo'>
+<div class="container">
+  <div class="row row-offcanvas row-offcanvas-right">
+    <div class="col-xs-12 col-sm-8">
+      <div class="jumbotron panel panel-default"></div>
+    </div>
+    <div class="col-xs-6 col-sm-4 sidebar-offcanvas jumbotron panel panel-default" id="sidebar" role="navigation">
+      <button type="button" class="btn btn-primary btn-lg btn-block twitter">
+        <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), :class => "twitter-link" %>
+      </button>
+   <!-- <%= form_for(:user, :url => registration_path(:user)) do |f| %>
+        <div class='form-signin'>
+          <%= f.email_field :email, :placeholder => "Email Address", :class => "input-block-level" %>
+          <%= f.password_field :password, :placeholder => "Password", :class => "input-block-level" %>      
+          <%= link_to "Forgot your password?", new_password_path(:user) %>
+          <%= f.submit 'Sign In', :class => "submit btn btn-medium btn-primary pull-right" %>
+        </div>
+      <% end %> -->
     </div>
   </div>
-</div>
-
-<div id='intro'>
-  <div class='video'>
-    <iframe src="http://player.vimeo.com/video/26178772" width="457" height="266" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>  
-  </div> <!-- <=intro video that describes theatr -->
-  <div class='text'>
-    <h1 class='m0'> Share and sell your movies across the interwebs. </h1>
-    <h3> Distributing and monetizing your movie, without giving up a bunch of rights, has always been a pain in the ass. Not anymore. Keep control! <a href="#">See a demo</a>.</h3>
-    <ul>
-      <li class='homepage1'>
-        <h4 class='bold'> Hosting, payment, and tech handled for you. </h4>
-        <h5> Let us take care of the boring stuff so you can get back to creating movies.</h5>
-      </li>
-      <li class='homepage2'>
-        <h4 class='bold'> Leverage your fans, followers, and friends. </h5>
-        <h5> <i>You</i> are the distribution. No need to work with corporate suits and give up control. Use your existing networks to shoot for the stars. </h5> 
-      </li>
-    </ul>
-  </div>
-</div>
-
-<div>
-  <%= form_for(:user, :url => registration_path(:user)) do |f| %>
-    <div class='signup'>
-      <%= f.email_field :email, :placeholder => "Email Address", :class => "landing-form-field" %>
-      <%= f.password_field :password, :placeholder => "Password", :class => "landing-form-field" %> 
-      <span class="domain">.theatr.co</span>
-      <%= f.url_field :subdomain, :placeholder => "Custom URL", :class => "landing-form-field subdomain" %> 
+<div> 
       
-      <%= f.submit 'Get Started!', :class => "submit btn" %>
-    </div>
-  <% end %>
-</div>
+<!-- <div class="span9 mp010">
+  <div class="span4 pull-right background background-with-text">
+    <h4> New to bluebird? Sign Up! </h4>
+    <div class="divider-horizontal"> </div> 
+  </div>
+</div> -->

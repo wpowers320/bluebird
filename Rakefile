@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Theatr::Application.load_tasks
+Bluebird::Application.load_tasks

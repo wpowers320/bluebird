@@ -9,6 +9,22 @@ MOVIE_CATEGORIES = [
   'Details',
 ]
 
+TWITTER_CONSUMER_KEY = [ 
+  'LsuoMgEigHl6xodI7RDX4Q'
+]
+
+TWITTER_CONSUMER_SECRET = [
+  '0b3pyuLChAJ8xFHk1aGUm0b8Kg4zn8MRA1vxUYl78'
+]
+
+TWITTER_TOKEN = [
+  '266264596-C2V2nB8zPtuya9khnPzSVSGn7BAG6MxifJD3eWx5'
+]
+
+TWITTER_TOKEN_SECRET = [
+  'ghojNBpzgYi8wAkq9oiuoMTYDJ6rNmJYUNB9wwM'
+]
+
 US_STATES = {
   'Alabama' => 'AL',
   'Alaska' => 'AK', 

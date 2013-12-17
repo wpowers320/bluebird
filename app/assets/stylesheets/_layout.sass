@@ -1,329 +1,35 @@
-@import forms
+@import compass
 
-// setting width with variables for everything may seem like overkill but will be worth it in the end :)
-$site-width: 1120px
-$content-outer-width: 600px
+// Sign-in header dropdown
+.dropdown
+  .sign-in
+    width: 250px
+    padding: 10px 
+    .forgot-pswd
+      padding-top: 10px
 
-$content-bg-padding: 25px
-$content-inner-padding: 10px
-$content-inner-width: $content-outer-width - (2*($content-bg-padding + $content-inner-padding))
-
-$sidebar-padding: 10px
-$sidebar-width: ($site-width - $content-outer-width)/2
-
-// add some padding to sides so smaller browser windows
-// still have a nice edge with space before content
-$site-padding: 10px
-
-$event-categories: 'home', 'movie', 'payments'
-
-=centered-on-page
-  width: $content-outer-width
-  margin: 0 auto
-  padding: 0 $site-padding
-  // background-color: white
-
-// Header & Footer //
-
+//Body Layout
 body
-  font-family: Helvetica, Arial, Verdana, sans-serif
-  background: #eee
-  margin: 0
+  padding-top: 60px
 
-  > header
-    background-repeat: repeat-x   
-    min-width: 1160px
-    height: 50px
-    .content
-      +centered-on-page 
-      .logo-wrap
-        float: left
-        display: inline
-        .logo
-          background-image: url('/images/logo.png')
-          display: block
-          text-indent: -119988px
-          overflow: hidden
-          text-align: center
-          background-repeat: no-repeat
-          background-position: 50% 50%
-          width: 450px
-          height: 100px
+body.root-controller
+  background: url("/images/landing_page.png") no-repeat 0% -8% fixed
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.landing_page.png', sizingMethod='scale')
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='landing_page.png', sizingMethod='scale')"
 
-        .profile-logo
-          display: block  
-          width: 215px
-          height: 60px
-          +replace-text('/images/logo1.png')
+.twitter  
+  @include background-image(url("/images/twitter_logo_white.png"))
+  background-position: 10px
+  background-size: 36px
+  background-repeat: no-repeat
+  &:hover
+    background-position: 10px
 
-      .nav
-        display: inline-block
-        float: right
-        padding-right: 10px
-
-      .nav li
-        display: block	
-        list-style: none
-
-      .nav .user-menu
-        &:hover
-                                    
-      .nav .signin
-        margin: 0
-
-      .nav .signout
-        display: block
-        text-indent: -119988px
-        overflow: hidden
-        text-align: left
-        background-image: url('/images/sign_out_icon.png')
-        background-repeat: no-repeat
-        background-position: 100% 10%
-        height: 38px
-        width: 38px
-        float: right
-        margin: 0 5px
-        &:hover
-          background-position: 100% 115%
-
-      .nav .settings
-        display: block
-        text-indent: -119988px
-        overflow: hidden
-        text-align: left
-        background-image: url('/images/settings_icon.png')
-        background-repeat: no-repeat
-        background-position: 100% 10%
-        height: 38px
-        width: 38px
-        float: right
-        margin: 0 5px
-        &:hover
-          background-position: 100% 115%
-       
-      .nav .help
-        display: block
-        text-indent: -119988px
-        overflow: hidden
-        text-align: left
-        background-image: url('/images/help_icon.png')
-        background-repeat: no-repeat
-        background-position: 100% 10%
-        height: 38px
-        width: 38px
-        float: right
-        margin: 0 5px
-        &:hover
-          background-position: 100% 115%
-
-
-      .nav .user-name
-        padding: 9px 11px
-        margin: 0 0 10px 40px
-        max-width: 65px 
-        &:hover
-          padding: 8px 10px
-          +border-radius (5px)
-          border: 1px solid #999
-        &:active
-          +background(linear-gradient(color-stops(darken(white, 14), darken(white, 20))))
-          -webkit-box-shadow: inset 0 1px 0 #f0f0f0, #f0f0f0 0 1px 0
-          -moz-box-shadow: inset 0 1px 0 #f0f0f0, #f0f0f0 0 1px 0
-          box-shadow: inset 0 1px 0 #f0f0f0, #f0f0f0 0 1px 0 
-
-      .nav a
-        text-decoration: none
-        color: #333
-      
-      .menu-dropdown, .dropdown-menu
-        display: none
-        //z-index: -100        
- 
-      .nav .user-img
-       
-      .nav a.user-link
-        
-      .user-menu:hover a, .user-menu:hover span 
-
-  > footer 
-    .content
-      width: 1140px
-      overflow: hidden
-      text-align: center
-      margin: 0 auto
-      nav 
-        ul
-          list-style: none
-          padding-bottom: 10px 
-          li
-            font-weight: bold
-            color: #333
-            a
-              color: #666
-              text-decoration: none
-              font-weight: normal
-              margin: 0 10px
-              &:hover
-                color: #000
-                text-decoration: underline 
-
-// Left Sidebar //
-
-#left-sidebar
-  padding: $sidebar-padding
-  width: 150px
-  height: 500px 
-  margin: 0
-  float: left 
-  ul.categories
-    padding: 0 40px
-    position: fixed
-    z-index: 1030
-    li
-      font-size: 16px
-      font-weight: bold
-      margin-bottom: 30px 
-      background-repeat: no-repeat
-      list-style: none
-      a
-        text-decoration: none
-        display: block
-        width: 100%
-        padding-top: 40px
-        height: 30px  
-        color: #666
-        text-align: center
-        background-position: 50% 0%
-        background-repeat: no-repeat
-        &:hover
-          color: black
-          background-position: 50% 118%
-          background-repeat: no-repeat 
-      a.active 
-        color: black
-        background-position: 50% 118%
-      a.home
-        background-image: url('/images/home_icon.png')
-        max-height: 0
-      a.movie
-        background-image: url('/images/movie_icon.png')
-        max-height: 0
-      a.payments
-        background-image: url('/images/payments_icon.png')
-        max-height: 0 
-  .arrow_box
-    position: relative 
-  .arrow_box:after, .arrow_box:before 
-    right: -60%
-    border: solid transparent
-    content: " "
-    height: 0
-    width: 0
-    position: absolute
-    pointer-events: none
-  .arrow_box:after 
-    border-right-color: white
-    border-width: 15px
-    top: 80%
-    margin-top: -20px
-  .arrow_box:before 
-    border-right-color: #bbb
-    border-width: 16px
-    top: 80%
-    margin-top: -21px
-  .movie_arrow:after, .movie_arrow:before
-    top: 80% 
-  .payments_arrow:after, .payments_arrow:before
-    top: 80% 
- 
-// Right Sidebar //
-
-#right-sidebar
-  background: white
-  +border-radius(5px)
-  border: 1px solid #bbb
-  margin: 0 10px 0 40px
-  float: left
-  min-width: 300px
-  min-height: 200px
-  position: fixed
-  z-index: 1030
-  left: 1040px
-  ul.rs-category-select
-    padding: 10px
-    margin-top: -1px
-    li
-      list-style: none
-      margin-top: 17px
-    a.flat-bottom
-      +button
-      +border-bottom-right-radius(0)
-      +border-bottom-left-radius(0)
-    a.flat
-      +button
-      +border-radius(0)
-    a.flat-top
-      +button
-      +border-top-right-radius(0)
-      +border-top-left-radius(0)
-    a.new-section
-      margin-top: 20px
-    a.active
-      -webkit-box-shadow: inset 0 0 2px 2px rgba(0,0,0,.1)
-      -moz-box-shadow: inset 0 0 2px 2px rgba(0,0,0,.1)
-      box-shadow: inset 0 0 2px 2px rgba(0,0,0,.1) 
-      background-image: -webkit-linear-gradient(top,#EEE,#E0E0E0)
-      background-image: -moz-linear-gradient(top,#EEE,#E0E0E0)
-      background-image: -ms-linear-gradient(top,#EEE,#E0E0E0)
-      background-image: -o-linear-gradient(top,#EEE,#E0E0E0)
-      background-image: linear-gradient(top,#EEE,#E0E0E0)
-    a.about
-      padding: 8px 201px 8px 10px
-    a.faq
-      padding: 8px 214px 8px 10px
-    a.team
-      padding: 8px 206px 8px 10px
-    a.contact
-      padding: 8px 188px 8px 10px
-    a.content-policy
-      padding: 8px 136px 8px 10px
-    a.terms-of-service
-      padding: 8px 120px 8px 10px
-    a.privacy-policy
-      padding: 8px 140px 8px 10px
-  ul.categories
-    padding: 10px
-    margin-top: 7px
-    li
-      font-size: 16px
-      font-weight: bold
-      margin-bottom: -1px 
-      background-repeat: no-repeat
-      list-style: none
-      overflow: hidden
-      //text-overflow: ellipsis
-      white-space: nowrap
-      max-width: 258px
-      padding: 8px 0 
-      a
-        text-decoration: none
-        color: #333333
-        font-weight: bold
-        cursor: pointer 
-        padding: 8px 175px 8px 10px
-    li.flat
-      +border-radius(0)
-    li.flat-top
-      +border-top-right-radius(0)
-      +border-top-left-radius(0)
-    li.flat-bottom
-      +border-bottom-right-radius(0)
-      +border-bottom-left-radius(0)
-    li.new-section
-      margin-top: 20px
-
-
-         
-        
-                                
-    
+button a.twitter-link
+  color: white
+  text-decoration: none
+  

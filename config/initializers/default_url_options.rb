@@ -100,7 +100,7 @@ end
 
 DefaultUrlOptions.configure!(
   :protocol => 'http',
-  :host => 'theatr.co'
+  :host => 'bluebird.com'
 )
 
 DefaultUrlOptions.configured = 0 # lie so first request re-initializes
