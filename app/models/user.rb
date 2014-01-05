@@ -1,25 +1,27 @@
-class User < ActiveRecord::Base
+class User < ActiveRecord::Base 
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :lockable, :confirmable, :timeoutable and :activatable
+  # :token_authenticatable, :lockable, :confirmable, :timeoutable, :validatable and :activatable
   devise :database_authenticatable, :registerable, 
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable
         
   devise :omniauthable, :omniauth_providers => [:twitter]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :provider, :uid
+  attr_accessible :email, :password, :password_confirmation, :provider, :uid, :name, :screen_name, :image
   # attr_accessible :title, :body
-
-  has_many :videos
   
-  def subdomain
+  def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+      user = User.create!(name:auth.info.name,
+                          provider:auth.provider,
+                          uid:auth.uid, 
+                          screen_name:auth.info.nickname,
+                          image:auth.info.image,
+                          password:Devise.friendly_token[0,20]
+                         )
+    end
+    user
   end
 
   def self.from_omniauth(auth)
@@ -30,7 +32,9 @@ class User < ActiveRecord::Base
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
-      user.name = auth["info"]["nickname"]
+      user.name = auth["info"]["name"]
+      user.screen_name = auth["info"]["nickname"]
+      user.image = auth["info"]["image"]
     end
   end
 

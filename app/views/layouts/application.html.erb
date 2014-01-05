@@ -1,29 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>bluebird</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
    
     <!-- Optional theme -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css"> 
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <!-- Google jQuery CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> 
 
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %> 
   </head>
 
-  <% if params[:controller] == 'root' %>
-  <body class="root-controller">
-  <% else %>
-  <body>
-  <% end %>
+  <body class="<%= params[:controller].parameterize %>-controller" data-twttr-rendered="true"> 
     <header>
       <%= render :partial => 'layouts/header' %> 
     </header>
@@ -35,10 +36,9 @@
         </div>
       </div>
     <% else %> 
-      <div class="container-fluid">
-        <div class = "row-fluid">
-          <div class= "span3"></div>
-          <div class = "span9"> <% yield %></div>
+      <div class="container bs-docs-container">
+        <div class = "row"> 
+          <%= yield %>
         </div>
       </div>
     <% end %>

@@ -1,7 +1,7 @@
 <div id='static'>
 <h1><strong>Sign in</strong></h1>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %> 
+<%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %> 
   <div><%= f.text_field :email, :placeholder => 'Email', :class => 'landing-form-field' %></div>
 
   <div><%= f.password_field :password, :placeholder => 'Password', :class => 'landing-form-field' %></div>

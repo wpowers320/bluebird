@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505183146) do
+ActiveRecord::Schema.define(:version => 20140105224037) do
 
   create_table "favorites", :force => true do |t|
     t.string   "tweet_id"
@@ -72,13 +72,14 @@ ActiveRecord::Schema.define(:version => 20130505183146) do
   add_index "locations", ["uuid"], :name => "index_locations_on_uuid", :unique => true
 
   create_table "sessions", :force => true do |t|
-    t.text     "data",       :default => "'--- {}\n'"
-    t.integer  "user_id",                              :null => false
-    t.datetime "created_at",                           :null => false
-    t.datetime "updated_at",                           :null => false
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  add_index "sessions", ["user_id"], :name => "index_sessions_on_user_id", :unique => true
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -100,6 +101,9 @@ ActiveRecord::Schema.define(:version => 20130505183146) do
     t.datetime "reset_password_sent_at"
     t.string   "provider"
     t.string   "uid"
+    t.string   "name"
+    t.string   "screen_name"
+    t.string   "image"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

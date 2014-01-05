@@ -1,84 +1,154 @@
-<%= render :partial => 'home/header_content' %>
-
-<div class='light'> 
-  <div class='devise-fields'>  
-    <h4> Message to viewers </h4>
-    <div id="wysihtml5-editor-toolbar" style="display: none">
-      <header class='top-toolbar'>
-        <ul class="commands">
-          <li data-wysihtml5-command="bold" title="Make text bold (Ctrl + B)"></li>
-          <li data-wysihtml5-command="italic" title="Make text bold (Ctrl + I)"></li>
-          <li data-wysihtml5-command="underline" title="Make text bold (Ctrl + U)"></li>
-          <li data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1" title="Insert Headline 1"></li>
-          <li data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2" title="Insert Headline 2"></li>
-
-          <li data-wysihtml5-command-group="foreColor" class="fore-color" title="Color the selected text">
-            <ul>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="silver" class="color-fix"></li>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="gray" class="color-fix"></li>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="maroon" class="color-fix"></li>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red" class="color-fix"></li>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="purple" class="color-fix"></li>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green" class="color-fix"></li>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="olive" class="color-fix"></li>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="navy" class="color-fix"></li>
-              <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue" class="color-fix"></li>
-            </ul>
-          </li>
+<div class="col-md-3">
+  <div class="bs-sidebar hidden-print affix" role="complementary">
+    <ul class="nav bs-sidenav" style="margin-bottom: 20px">          
+      <li class="main-sidenav-title">
+        <a href="#frontpage" class="sidenav-title">Front Page</a>
+      </li>
+      <li class="main-sidenav-title">
+        <a href="#technology" class="sidenav-title">Technology</a></li>
+      <li class="main-sidenav-title">
+        <a href="#business" class="sidenav-title">Business</a>
+      </li>
+      <li class="main-sidenav-title">
+        <a href="#music" class="sidenav-title">Music</a>
+      </li>
+      <li class="main-sidenav-title">
+        <a href="#local" class="sidenav-title">Local</a>
+      </li>
+      <li class="main-sidenav-title">
+        <a href="#international" class="sidenav-title">International</a>
+      </li>
+      <li class="main-sidenav-title">
+        <a href="#trending" class="sidenav-title">Trending</a>
+        <ul class="nav">
+          <li class="sidenav-subtitle"><a href="#trending-technology" class="subtitle">Technology</a></li>
+          <li class="sidenav-subtitle"><a href="#trending-business" class="subtitle">Business</a></li>
+          <li class="sidenav-subtitle"><a href="##trending-music" class="subtitle">Music</a></li>
+          <li class="sidenav-subtitle"><a href="##trending-local" class="subtitle">Local</a></li>
+          <li class="sidenav-subtitle"><a href="##trending-international" class="subtitle">International</a></li>
         </ul>
-      </header>
-
-      <header class='bottom-toolbar'>
-        <ul class="commands">
-          <li data-wysihtml5-command="insertOrderedList" title="Insert an ordered list"></li>
-          <li data-wysihtml5-command="insertUnorderedList" title="Insert an unordered list"></li>         
-          <li data-wysihtml5-command="createLink" title="Insert a link"></li>
-          <li data-wysihtml5-command="insertImage" title="Insert an image"></li>
-          <li data-wysihtml5-command="insertSpeech" title="Insert Speech"></li>
-          <li data-wysihtml5-action="change_view" title="Show HTML"></li>
-        </ul>
-      </header>
-  
-      <div data-wysihtml5-dialog="createLink" style="display: none;">
-        <label>
-          Link: <input data-wysihtml5-dialog-field="href" value="http://" class="text">
-        </label>
-        <a data-wysihtml5-dialog-action="save">OK</a>
-        <a data-wysihtml5-dialog-action="cancel">Cancel</a>
-      </div>
-          
-      <div data-wysihtml5-dialog="insertImage" style="display: none;">
-        <label>
-          Image: <input data-wysihtml5-dialog-field="src" value="http://" class="text">
-        </label>
-        <a data-wysihtml5-dialog-action="save">OK</a>
-        <a data-wysihtml5-dialog-action="cancel">Cancel</a>
-      </div>
-    </div>
-
-    <%= semantic_form_for :video, :method => 'POST', :html => {:multipart => true} do |f| %>   
-      <%= f.error_messages %>
-
-      <%#= f.input :title %>
-      <%= f.text_area :body, :placeholder => "<u><i>Example</i></u> <p> To those who might wish to 'torrent' this movie: <p>
-Look, we don't really get the whole 'torrent' thing. But we'd just like you to consider this: we made these files extremely easy to use against well-informed advice and industry norms. We were told that it would be easier to torrent the way we made it, but we chose to do it this way anyway because we want it to be easy for people to watch and enjoy this movie in any way they want without 'corporate' restrictions. <p> A lot of hard work went into the production and posting of this video with our own and our producers' money. We would like to be able to post more material to the fans in this way, which makes it cheaper for you and more pleasant for us to perform our craft. So, please help us keep this being a good idea. We can't stop you from torrenting; all we can do is politely ask you to pay your small fee, enjoy the show, and let other people find it in the same way. <p>
-Sincerely, <p>
-Your friends at 'Movie Title'", :id => 'wysihtml5-textarea', :style => 'width: 96%'%>
-   
-      <%= f.actions do %>
-        <%= f.action :submit, :class => 'btn', :label => 'Save' %> 
+      </li>
+    </ul>
+    <ul class="nav bs-sidenav" style="padding: 10px 20px">
+      <% if user_signed_in? %>
+        &copy; <%= Time.now.year %> bluebird 
+        <%= link_to 'Home', home_path, :class => "p5" %> 
+        <%= link_to 'FAQ', static_path(:how_it_works), :class => "p5" %> <!-- this should probably link to the demo from the homepage -->
+        <%= link_to 'About', static_path(:about), :class => "p5" %> 
+      <% else %>
+        &copy; <%= Time.now.year %> bluebird 
+        <%= link_to 'Home', root_path, :class => "p5" %> 
+        <%= link_to 'FAQ', static_path(:how_it_works), :class => "p5" %> <!-- this should probably link to the demo from the homepage -->
+        <%= link_to 'About', static_path(:about), :class => "p5" %> 
       <% end %>
-
-    <% end %>
+    </ul>
+  </div>
+</div>
+<div class="col-md-9" style="top: 20px">
+  <div id="frontpage">
+    <div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-captions" data-slide-to="0" class=""></li>
+        <li data-target="#carousel-example-captions" data-slide-to="1" class=""></li>
+        <li data-target="#carousel-example-captions" data-slide-to="2" class=""></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item">
+          <%= image_tag("carousel-1.png", :alt => "900x500") %>
+          <div class= "carousel-caption">
+            <h3>First Featured Article</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </div>
+        <div class="item">
+          <%= image_tag("carousel-2.png", :alt => "900x500") %>
+          <div class="carousel-caption">
+            <h3>Second Featured Article</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="item">
+          <%= image_tag("carousel-3.png", :alt => "900x500") %>
+          <div class="carousel-caption">
+            <h3>Third Featured Article</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#carousel-example-captions" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-captions" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+    </div>
+  </div>
+  <div class="page-header" id="technology">
+  <h1>Technology</h1>
+  </div>
+  <div class="row">
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+    </div>
   </div>
 </div>
 
-<div class='main-divider'></div>
-
-<script>
-  var editor = new wysihtml5.Editor("wysihtml5-textarea", {
-    toolbar:      "wysihtml5-editor-toolbar",
-    stylesheets:  "<%= stylesheet_path('wysiwyg') %>", 
-    parserRules:  wysihtml5ParserRules
-  });
-</script>

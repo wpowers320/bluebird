@@ -1,0 +1,23 @@
+  <!-- app scripts -->
+    <%=
+      javascripts = %w(
+        application
+        defaults 
+      )
+
+      if !!session['firebug']
+        javascripts.push('firebug-lite-compressed.js')
+      end
+
+      unless Rails.env.production?
+        # javascripts.push('profiling/yahoo-profiling.min.js')
+        # javascripts.push('profiling/config.js')
+      end
+
+      javascript_include_tag(
+        javascripts,
+        :cache => "all"
+      )
+    %>
+    <% default_content_for(:script){} %>
+
