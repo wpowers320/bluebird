@@ -1,0 +1,42 @@
+<div class="bs-sidebar hidden-print affix" role="complementary">
+  <ul class="nav bs-sidenav" style="margin-bottom: 20px">          
+    <li class="main-sidenav-title">
+      <a href="#frontpage" class="sidenav-title">Front Page</a>
+    </li>
+    <li class="main-sidenav-title">
+      <a href="#technology" class="sidenav-title">Technology</a>
+    </li>
+    <li class="main-sidenav-title">
+      <a href="#business" class="sidenav-title">Business</a>
+    </li>
+    <li class="main-sidenav-title">
+      <a href="#music" class="sidenav-title">Music</a>
+    </li>
+    <li class="main-sidenav-title">
+      <a href="#local" class="sidenav-title">Local</a>
+    </li>
+    <li class="main-sidenav-title">
+      <a href="#international" class="sidenav-title">International</a>
+    </li>
+    <li class="main-sidenav-title">
+      <a href="#trending" class="sidenav-title">Trending</a>
+      <ul class="nav">
+        <li class="sidenav-subtitle"><a href="#trending-technology" class="subtitle">Technology</a></li>
+        <li class="sidenav-subtitle"><a href="#trending-business" class="subtitle">Business</a></li>
+        <li class="sidenav-subtitle"><a href="#trending-music" class="subtitle">Music</a></li>
+        <li class="sidenav-subtitle"><a href="#trending-local" class="subtitle">Local</a></li>
+        <li class="sidenav-subtitle"><a href="#trending-international" class="subtitle">International</a></li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="nav bs-sidenav" style="padding: 10px 20px">
+    <% if user_signed_in? %>
+      &copy; <%= Time.now.year %> <%= link_to 'bluebird', home_path %> 
+      <%= link_to 'FAQ', static_path(:how_it_works) %> <!-- this should probably link to the demo from the homepage -->
+      <%= link_to 'About', static_path(:about) %> 
+    <% else %>
+      &copy; <%= Time.now.year %> <%= link_to 'bluebird', root_path %> 
+      <%= link_to 'FAQ', static_path(:how_it_works) %> <!-- this should probably link to the demo from the homepage -->                                             <%= link_to 'About', static_path(:about) %> 
+    <% end %>
+  </ul>
+</div>

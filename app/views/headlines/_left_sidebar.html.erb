@@ -1,0 +1,36 @@
+<div class="bs-sidebar hidden-print affix" role="complementary">
+  <ul class="nav bs-sidenav" style="margin-bottom: 20px">          
+    <div class="headline-nav">
+       <%= link_to "Front Page", home_path() %>
+    </div>
+    <div class="headline-nav">
+      <%= link_to "Technology", technology_path() %>
+    </div>
+    <div class="headline-nav">
+      <%= link_to "Business", business_path() %>    
+    </div>
+    <div class="headline-nav">
+      <%= link_to "Music", music_path() %>
+    </div>
+    <div class="headline-nav">
+      <%= link_to "Local", local_path() %>    
+    </div>
+    <div class="headline-nav">
+     <%= link_to "International", international_path() %> 
+    </div>
+    <div class="headline-nav">
+      <%= link_to "Trending", trending_path() %>
+    </div>
+  </ul>
+  <ul class="nav bs-sidenav" style="padding: 10px 20px">
+    <% if user_signed_in? %>
+      &copy; <%= Time.now.year %> <%= link_to 'bluebird', home_path %> 
+      <%= link_to 'FAQ', static_path(:how_it_works) %> <!-- this should probably link to the demo from the homepage -->
+      <%= link_to 'About', static_path(:about) %> 
+    <% else %>
+      &copy; <%= Time.now.year %> <%= link_to 'bluebird', root_path %> 
+      <%= link_to 'FAQ', static_path(:how_it_works) %> <!-- this should probably link to the demo from the homepage -->                                             <%= link_to 'About', static_path(:about) %> 
+    <% end %>
+  </ul>
+</div>
+

@@ -20,6 +20,14 @@ Bluebird::Application.routes.draw do
   match '/home(/:action)', :controller => :home, :action => :index, :as => :home 
   match '/home/theme(/:action)', :controller => :home, :action => :theme, :as => 'theme'
   match '/home/connect(/:action)', :controller => :home, :action => :connect, :as => 'connect'
+ 
+  match '/technology(/:action)', :controller => :headlines, :action => :technology, :as => 'technology'
+  match '/business(/:action)', :controller => :headlines, :action => :business, :as => 'business'
+  match '/music(/:action)', :controller => :headlines, :action => :music, :as => 'music'
+  match '/local(/:action)', :controller => :headlines, :action => :local, :as => 'local'
+  match '/international(/:action)', :controller => :headlines, :action => :international, :as => 'international'
+  match '/trending(/:action)', :controller => :headlines, :action => :trending, :as => 'trending'
+
 
   match '/payments(/:action)', :controller => :payments, :action => :index, :as => :payments
   match '/payments/billing(/:action)', :controller => :payments, :action => :billing, :as => 'billing'
