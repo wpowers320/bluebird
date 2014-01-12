@@ -4,10 +4,8 @@
       <div class="jumbotron panel panel-default"></div>
     </div>
     <div class="col-xs-6 col-sm-4 sidebar-offcanvas panel panel-default" id="sidebar" role="navigation" style="padding: 15px">
-      <div class="separator">
-      <button type="button" class="btn btn-primary btn-lg btn-block twitter">
-        <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), :class => "twitter-link" %>
-      </button>
+      <div class="separator"> 
+        <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), :class => "twitter-link btn btn-primary btn-lg btn-block twitter", :type => :button %>
       </div>
       <div>
       <%= form_for(:user, :url => session_path(:user)) do |f| %>
