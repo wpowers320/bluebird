@@ -41,3 +41,12 @@ $(document).ready(function(){
   scrollBy(0, -80);
   });
 });
+
+$(document).ready(function() {
+  $('.scrollup').click(function(){
+    $('body').animate({scrollTop:0}, 'fast');
+
+    // stop the click on the link adding a # to the end of the url 
+    event.preventDefault();
+  });
+});

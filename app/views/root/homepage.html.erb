@@ -19,7 +19,7 @@
         <div class="form-group">
           <div class="checkbox">
             <label>
-              <input type="checkbox"> Remember me
+              <%= f.check_box :remember_me %> <%= f.label :remember_me%> 
               <%= f.submit 'Sign In', :class => "submit btn btn-medium btn-primary pull-right" %>
             </label>
           </div>   
@@ -30,9 +30,4 @@
   </div>
 <div> 
       
-<!-- <div class="span9 mp010">
-  <div class="span4 pull-right background background-with-text">
-    <h4> New to bluebird? Sign Up! </h4>
-    <div class="divider-horizontal"> </div> 
-  </div>
-</div> -->
+
