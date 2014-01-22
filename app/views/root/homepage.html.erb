@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row row-offcanvas row-offcanvas-right">
     <div class="col-xs-12 col-sm-8">
-      <div class="jumbotron panel panel-default"></div>
+      <div class="jumbotron panel panel-default opacity"></div>
     </div>
-    <div class="col-xs-6 col-sm-4 sidebar-offcanvas panel panel-default" id="sidebar" role="navigation" style="padding: 15px">
+    <div class="col-xs-6 col-sm-4 sidebar-offcanvas panel panel-default opacity" id="sidebar" role="navigation" style="padding: 15px">
       <div class="separator"> 
         <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), :class => "twitter-link btn btn-primary btn-lg btn-block twitter", :type => :button %>
       </div>
@@ -19,7 +19,7 @@
         <div class="form-group">
           <div class="checkbox">
             <label>
-              <%= f.check_box :remember_me %> <%= f.label :remember_me%> 
+              <%= f.check_box :remember_me %> <%= f.label :remember_me, :style => "color: white" %> 
               <%= f.submit 'Sign In', :class => "submit btn btn-medium btn-primary pull-right" %>
             </label>
           </div>   
@@ -28,6 +28,6 @@
       </div>
     </div>
   </div>
-<div> 
+</div> 
       
 
