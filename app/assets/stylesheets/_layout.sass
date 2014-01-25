@@ -13,6 +13,13 @@ body
   padding-top: 60px
 
 body.root-controller 
+  background: black 
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+  min-width: 100%
+  min-height: 100%
   .video
     -webkit-background-size: cover
     -moz-background-size: cover
@@ -20,7 +27,7 @@ body.root-controller
     background-size: cover
     min-width: 100%
     min-height: 100%
-    margin-top: -20px
+    margin-top: -90px
   
 .twitter  
   @include background-image(url("/images/twitter_logo_white.png"))
@@ -30,9 +37,10 @@ body.root-controller
   &:hover
     background-position: 10px
 
-button a.twitter-link
+a.twitter-link
   color: white
   text-decoration: none
+  margin-bottom: 15px
 
 .separator
   padding-bottom: 15px
@@ -47,3 +55,10 @@ button a.twitter-link
   left: 0
   top: 0
   margin-top: 100px
+
+.logo  
+  @include background-image(url("/images/logo.png"))
+  background-position: 50% 
+  background-repeat: no-repeat 
+  min-height: 200px
+  min-width: 200px

@@ -18,6 +18,10 @@
     <!-- Google jQuery CDN -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> 
+ 
+    <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
@@ -31,9 +35,11 @@
     </header>
 
     <% if params[:controller] == 'root' %>
+      <div id="page">
       <video preload="auto" autoplay="autoplay" loop="true" class="video">
         <source src="http://static.baboom.com/splash/vid/b_bang_splash.mp4" type="video/mp4">
       </video>
+      </div>
       <div class="container-fluid">
         <div class = "row-fluid">
          <%= yield %>  

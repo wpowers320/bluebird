@@ -1,12 +1,15 @@
 <div class="container">
   <div class="row row-offcanvas row-offcanvas-right">
-    <div class="col-xs-12 col-sm-8">
-      <div class="jumbotron panel panel-default opacity" style="padding: 0 15px; min-height: 271px">
+    <div class="col-md-offset-4 col-xs-6 col-sm-4 sidebar-offcanvas panel panel-default opacity">
+      <div class="separator" style="text-align: center">
+        <div class="logo"></div>
         <h3 style="color: white"> Never Miss A Headline</h3>
-        <p style="color: white"> bluebird aggregates the headlines across the web so that you never miss what's important.</p>
+        <h4 style="color: white; font-weight: normal"> bluebird aggregates the headlines from your Twitter timeline so that you never miss what's important.</h4>
       </div>
+       <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), :class => "twitter-link btn btn-primary btn-lg btn-block twitter", :type => :button %>
     </div>
-    <div class="col-xs-6 col-sm-4 sidebar-offcanvas panel panel-default opacity" id="sidebar" role="navigation" style="padding: 15px">
+
+    <!-- <div class="col-xs-6 col-sm-4 sidebar-offcanvas panel panel-default opacity" id="sidebar" role="navigation" style="padding: 15px">
       <div class="separator"> 
         <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), :class => "twitter-link btn btn-primary btn-lg btn-block twitter", :type => :button %>
       </div>
@@ -30,7 +33,8 @@
       <% end %>
       </div>
     </div>
-  </div>
+  </div>-->
+
 </div> 
       
 
