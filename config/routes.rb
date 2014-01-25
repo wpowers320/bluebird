@@ -13,9 +13,7 @@ Bluebird::Application.routes.draw do
   match '/video/details(/:action)', :controller => :video, :action => :details, :as => 'details' 
   match '/video/trailer(/:action)', :controller => :video, :action => :trailer, :as => 'trailer'
 
-  get "root/homepage"
-
-  match 'static(/:action(.:format))', :controller => 'static', :as => 'static'
+  get "root/homepage" 
 
   match '/home(/:action)', :controller => :home, :action => :index, :as => :home 
   match '/home/theme(/:action)', :controller => :home, :action => :theme, :as => 'theme'
@@ -34,6 +32,8 @@ Bluebird::Application.routes.draw do
 
   match '/settings(/:action)', :controller => :settings, :action => :index, :as => :settings
   match '/setting/user(/:action)', :controller => :settings, :action => :user_settings, :as => 'user_settings'
+  
+  match '(/:action(.:format))', :controller => 'static', :as => :action
  
 
   # The priority is based upon order of creation:

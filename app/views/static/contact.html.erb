@@ -1,32 +1,31 @@
-<div id='static_same_main'>  
-  <h1>
-    <strong>Contact
-    </strong>
-  </h1>
+<div class="col-md-3">
+  <%= render partial: "left_sidebar"%> 
 </div>
-
-<div class='header-divider'>
-</div>
-
-<div id='static_same_main'>
-  <p>Copy goes here!</p> 
-  <div>
-    <%= form_for :email, :url => { :controller => 'static', :action => 'send_mail' } do |f| %>
-      <div> 
-        <%= f.text_field :name, :placeholder => 'Name', :class => "landing-form-field", :id => "xlInput" %>
-      </div>    
-      <div>
-        <%= f.email_field :email, :placeholder => 'Email', :class => "landing-form-field", :id => "xlInput" %>
-      </div>    
-      <div>
-        <%= f.select :subject, ['Subject', 'General', 'Bugs & Problems', 'Feature Requests', 'Founders', 'Client Relations', 'Public Relations'], "id"=>"normalSelect" %>
-      </div>
-      <div>  
-        <%= f.text_area :comments, :placeholder => 'Comments...', :class => "landing-form-field", :rows => 5 %>
-      </div>    
-      <div>
-        <%= f.submit 'Submit', :class => "btn", :style => 'margin-bottom: 20px' %>
-      </div>  
-    <% end %>
+<div class="col-md-9" style="top: 20px">
+  <div class="page-header" style="margin-top:0px">
+    <h1 style="margin-top:0px">Contact</h1>
   </div>
+  <div class="row"> 
+    <div class="container col-md-9">
+      <p>Copy goes here!</p>
+      <%= form_for :email, :url => { :controller => 'static', :action => 'send_mail' } do |f| %>
+        <div class="form-group"> 
+          <%= f.text_field :name, :placeholder => 'Name', :class => "form-control" %>
+        </div>    
+        <div class="form-group">
+          <%= f.email_field :email, :placeholder => 'Email', :class => "form-control" %>
+        </div>    
+        <div class="form-group">
+          <%= f.select :subject, ['Subject', 'General', 'Bugs & Problems', 'Feature Requests', 'Founders', 'Client Relations', 'Public Relations'], {}, {:class => "form-control", :style => "max-width: 230px"} %>
+        </div>
+        <div class="form-group">  
+          <%= f.text_area :comments, :placeholder => 'Comments...', :class => "form-control", :style => "max-height: 210px; max-width: 628px", :rows => 5 %>
+        </div>    
+        <div>
+          <%= f.submit 'Submit', :class => "submit btn btn-medium btn-primary pull-right" %>
+        </div>  
+      <% end %>
+    </div>
+  </div> 
 </div>
+
