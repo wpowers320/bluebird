@@ -1,13 +1,13 @@
 <div class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <div class="navbar-header"> 
+    <div class="navbar-header" style="float: left"> 
       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button>
+      </button> -->
       <!-- Be sure to leave the brand out there if you want it shown -->
       <% if user_signed_in? %>
         <%= link_to "bluebird", home_path, :class => "navbar-brand" %>
@@ -15,11 +15,11 @@
         <%= link_to "bluebird", root_path, :class => "navbar-brand" %> 
       <% end %>
     </div>
-    <!-- Everything you want hidden at 940px or less, place within here -->
-    <div class="collapse navbar-collapse">
+    <!-- Everything you want hidden at 940px or less, add class="collapse navbar-collapse" -->
+    <div>
       <% if user_signed_in? %>
         
-        <div class="col-md-offset-6">
+        <div class="col-md-offset-6 collapse">
           <ul class ="nav navbar-nav" style="height: 50px; width: 50px">
             <li><a href="#" class="scrollup"></a></li> 
            <!-- <li><a href="#">Technology</a></li>
@@ -50,23 +50,8 @@
           </li>
        </ul>
       <% else %>
-        <ul class="nav pull-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Sign In
-              <b class="caret"></b>
-            </a>         
-            <ul class="dropdown-menu sign-in">
-              <%= form_for(:user, :url => registration_path(:user)) do |f| %>
-                <div class='form-signin'>
-                  <%= f.email_field :email, :placeholder => "Email Address", :class => "input-block-level" %>
-                  <%= f.password_field :password, :placeholder => "Password", :class => "input-block-level" %>      
-                  <%= f.submit 'Sign In', :class => "submit btn btn-medium btn-primary" %>
-                  <%= link_to "Forgot your password?", new_password_path(:user), :class => "pull-right forgot-pswd" %>
-                </div>
-              <% end %>
-            </ul>
-          </li>
+        <ul class="nav navbar-nav pull-right">
+          <%= link_to "", user_omniauth_authorize_path(:twitter), :class => "twitter-link btn btn-primary btn-lg btn-block twitter", :style => "width: 55px; height: 45px; margin: 2px 0 0 ", :type => :button, :rel => "tooltip", :title => "Sign in with Twitter"%>
         </ul>
       <% end %>
     </div>  

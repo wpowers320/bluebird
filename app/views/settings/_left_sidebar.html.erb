@@ -1,0 +1,46 @@
+<div class="bs-sidebar hidden-print affix" role="complementary">
+  <ul class="nav bs-sidenav" style="margin-bottom: 20px">          
+    <div class="headline-nav">
+       <%= link_to "Front Page", home_path() %>
+    </div>
+    <div class="headline-nav">
+      <%= link_to "Technology", technology_path() %>
+    </div>
+    <div class="headline-nav">
+      <%= link_to "Business", business_path() %>    
+    </div>
+    <div class="headline-nav">
+      <%= link_to "Music", music_path() %>
+    </div>
+    <div class="headline-nav">
+      <%= link_to "Local", local_path() %>    
+    </div>
+    <div class="headline-nav">
+     <%= link_to "International", international_path() %> 
+    </div>
+    <div class="headline-nav">
+      <%= link_to "Trending", trending_path() %>
+    </div>
+  </ul>
+  <ul class="nav bs-sidenav" style="padding: 10px 20px">
+    <% if user_signed_in? %>
+      &copy; <%= Time.now.year %> <%= link_to 'bluebird', home_path %> &#149; 
+      <%= link_to 'FAQ', static_path(:how_it_works) %> &#149;
+      <%= link_to 'About', static_path(:about) %> &#149;
+      <%= link_to 'Privacy Policy', static_path(:privacy_policy) %> &#149;
+      <%= link_to 'Terms of Service', static_path(:terms_of_service) %> &#149;
+      <%= link_to 'Team', static_path(:team) %> &#149;
+      <%= link_to 'Contact', static_path(:contact) %>  
+    <% else %>
+      &copy; <%= Time.now.year %> <%= link_to 'bluebird', root_path %> &#149;
+      <%= link_to 'FAQ', static_path(:how_it_works) %> &#149;
+      <%= link_to 'About', static_path(:about) %> &#149;
+      <%= link_to 'Privacy Policy', static_path(:privacy_policy) %> &#149;
+      <%= link_to 'Terms of Service', static_path(:terms_of_service) %> &#149;
+      <%= link_to 'Team', static_path(:team) %> &#149;
+      <%= link_to 'Contact', static_path(:contact) %>  
+    <% end %>
+  </ul>
+</div>
+
+

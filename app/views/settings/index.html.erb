@@ -1,45 +1,18 @@
-<div id='static_same_main'>  
-  <h1>
-    <strong>Website Settings</strong>
-  </h1>
+<div class="col-md-3">
+  <%= render partial: "left_sidebar"%> 
+</div>
+<div class="col-md-9" style="top: 20px">
+  <div class="page-header" style="margin-top:0px">
+    <h1 style="margin-top:0px">Settings</h1>
+  </div>
+  <div class="row">
+    <div class="container">
+      <h3>Linked Accounts</h3> 
+      <h3>Download the mobile app</h3>
+    </div>
+  </div> 
 </div>
 
-<div class='header-divider'>
-</div>
 
-<%= form_for :user do |f| %>
 
-  <div class='light'>
-    <div class='devise-fields'>
-      <h4> Thumbnail </h4>
-    </div> 
-  </div>
-
-  <div class='main-divider'></div>
-
-  <div class='light'>
-    <div class='devise-fields'>
-      <h4> URL </h4>
-    </div> 
-  </div>
-
-  <div class='main-divider'></div>
-
-  <div class='light'>
-    <div class='devise-fields'>
-      <h4> Add User </h4>
-    </div> 
-  </div>
-
-  <div class='main-divider'></div>
-
-  <div class='light'>
-    <div class='devise-fields'>
-      <h4> Directory </h4>
-    </div> 
-  </div>
-
-  <%= f.submit 'Save', :class => 'submit btn', :style => 'margin-left: 510px' %> 
-
-<% end %>
 
