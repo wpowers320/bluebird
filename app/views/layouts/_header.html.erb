@@ -32,7 +32,7 @@
         <ul class="nav navbar-nav pull-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <%= current_user.image %> @<%= current_user.screen_name %> 
+              <%= image_tag $client.user.profile_image_url(:mini), :style => "margin-right: 10px" %> @<%= $client.user.screen_name %> 
               <b class="caret"></b> 
             </a>
             <ul class="dropdown-menu pull-right">

@@ -28,7 +28,7 @@
     <%= csrf_meta_tags %> 
   </head>
 
-  <body class="<%= params[:controller].parameterize %>-controller" data-twttr-rendered="true" data-spy="scroll" data-target="#ss-sidebar">  
+  <body class="<%= params[:controller].parameterize %>-controller" data-twttr-rendered="true">  
 
     <header>
       <%= render :partial => 'layouts/header' %> 
@@ -46,7 +46,7 @@
         </div>
       </div>
     <% else %> 
-      <div class="container bs-docs-container" id="ss-sidebar">
+      <div class="container bs-docs-container">
         <div class = "row"> 
           <%= yield %>
         </div>

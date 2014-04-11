@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
       user.name = auth["info"]["name"]
       user.screen_name = auth["info"]["nickname"]
       user.image = auth["info"]["image"]
+      user.home_timeline = auth["info"]["timeline"]
     end
   end
 

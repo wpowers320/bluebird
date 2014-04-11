@@ -33,7 +33,7 @@ Bluebird::Application.routes.draw do
   match '/settings(/:action)', :controller => :settings, :action => :index, :as => :settings
   match '/setting/user(/:action)', :controller => :settings, :action => :user_settings, :as => 'user_settings'
   
-  match '(/:action(.:format))', :controller => 'static', :as => :action
+  match '/static(/:action(.:format))', :controller => 'static', :as => :static
  
 
   # The priority is based upon order of creation:

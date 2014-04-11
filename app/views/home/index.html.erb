@@ -2,6 +2,7 @@
   <%= render partial: "left_sidebar"%> 
 </div>
 <div class="col-md-9" style="top: 20px">
+  <%= $client.home_timeline(:count => 200) %>
   <%= render partial: "carousel" %>  
   <%= render partial: "frontpage" %> 
   <%= render partial: "technology" %>
