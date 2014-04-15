@@ -36,6 +36,8 @@ gem 'omniauth-twitter'
 gem 'twitter'
 gem 'omniauth'
 
+gem 'twitter-text'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

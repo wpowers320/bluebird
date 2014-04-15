@@ -1,4 +1,13 @@
+require 'twitter-text'
+
 module ApplicationHelper
+
+  include Twitter::Autolink
+
+  def html_link(text)
+    text = auto_link(text)
+    text ? text.html_safe : ''
+  end
 
 # hacked version of the activesupport mail_to method, this one supports bcc
 #
