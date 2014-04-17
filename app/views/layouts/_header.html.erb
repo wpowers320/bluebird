@@ -32,7 +32,7 @@
         <ul class="nav navbar-nav pull-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <% cache("profile_header", :expires_in => 24.hours) do  %>
+              <% cache("header_profile", :expires_in => 24.hours) do  %>
                 <%= image_tag $client.user.profile_image_url(:mini), :style => "margin-right: 10px" %> @<%= $client.user.screen_name %> 
               <% end %>
               <b class="caret"></b> 
