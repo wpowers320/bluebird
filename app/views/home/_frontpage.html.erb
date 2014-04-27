@@ -1,39 +1,30 @@
-<div class="row">
-  <div class="col-6 col-sm-6 col-lg-4">
-   <% cache("tweets", :expires_in => 15.minutes) do  %>
-      <%= $client.home_timeline(:count => 1).each do |t|%>
-        <h3> <%= html_link('@' + t.user.screen_name) %> </h3> 
-        <p> <%= html_link(t.text) %> </p>  
-      <% end %>
-    <% end %>
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
+<div class="row"> 
+  <% cache("tweets", :expires_in => 1.minute) do  %>    
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h3> <%= html_link('@' + $client.home_timeline[0].user.screen_name) %> </h3> 
+      <p> <%= html_link($client.home_timeline[0].text) %> </p>  
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h3> <%= html_link('@' + $client.home_timeline[1].user.screen_name) %> </h3> 
+      <p> <%= html_link($client.home_timeline[1].text) %> </p>  
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h3> <%= html_link('@' + $client.home_timeline[2].user.screen_name) %> </h3> 
+      <p> <%= html_link($client.home_timeline[2].text) %> </p>  
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h3> <%= html_link('@' + $client.home_timeline[3].user.screen_name) %> </h3> 
+      <p> <%= html_link($client.home_timeline[3].text) %> </p>  
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h3> <%= html_link('@' + $client.home_timeline[4].user.screen_name) %> </h3> 
+      <p> <%= html_link($client.home_timeline[4].text) %> </p>  
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h3> <%= html_link('@' + $client.home_timeline[5].user.screen_name) %> </h3> 
+      <p> <%= html_link($client.home_timeline[5].text) %> </p>  
+    </div> 
+  <% end %>   
 </div>
+
 
