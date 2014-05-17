@@ -1,27 +1,27 @@
 <div class="row"> 
   <% cache("tweets", :expires_in => 1.minute) do  %>    
     <div class="col-6 col-sm-6 col-lg-4">
-      <h3> <%= html_link('@' + $client.home_timeline[0].user.screen_name) %> </h3> 
+      <h3> <%= link_to($client.home_timeline[0].user.name, '@' + $client.home_timeline[0].user.screen_name) %> </h3> 
       <p> <%= html_link($client.home_timeline[0].text) %> </p>  
     </div>
     <div class="col-6 col-sm-6 col-lg-4">
-      <h3> <%= html_link('@' + $client.home_timeline[1].user.screen_name) %> </h3> 
+      <h3> <%= link_to($client.home_timeline[1].user.name, '@' + $client.home_timeline[1].user.screen_name) %> </h3> 
       <p> <%= html_link($client.home_timeline[1].text) %> </p>  
     </div>
     <div class="col-6 col-sm-6 col-lg-4">
-      <h3> <%= html_link('@' + $client.home_timeline[2].user.screen_name) %> </h3> 
+      <h3> <%= link_to($client.home_timeline[2].user.name, '@' + $client.home_timeline[2].user.screen_name) %> </h3> 
       <p> <%= html_link($client.home_timeline[2].text) %> </p>  
     </div>
     <div class="col-6 col-sm-6 col-lg-4">
-      <h3> <%= html_link('@' + $client.home_timeline[3].user.screen_name) %> </h3> 
+      <h3> <%= link_to($client.home_timeline[3].user.name, '@' + $client.home_timeline[3].user.screen_name) %> </h3> 
       <p> <%= html_link($client.home_timeline[3].text) %> </p>  
     </div>
     <div class="col-6 col-sm-6 col-lg-4">
-      <h3> <%= html_link('@' + $client.home_timeline[4].user.screen_name) %> </h3> 
+      <h3> <%= link_to($client.home_timeline[4].user.name, '@' + $client.home_timeline[4].user.screen_name) %> </h3> 
       <p> <%= html_link($client.home_timeline[4].text) %> </p>  
     </div>
     <div class="col-6 col-sm-6 col-lg-4">
-      <h3> <%= html_link('@' + $client.home_timeline[5].user.screen_name) %> </h3> 
+      <h3> <%= link_to($client.home_timeline[5].user.name, '@' + $client.home_timeline[5].user.screen_name) %> </h3> 
       <p> <%= html_link($client.home_timeline[5].text) %> </p>  
     </div> 
   <% end %>   
