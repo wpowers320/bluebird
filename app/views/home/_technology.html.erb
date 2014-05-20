@@ -1,36 +1,16 @@
 <div class="page-header" id="technology">
   <h1><%= link_to "Technology", technology_path() %></h1>
 </div>
-<div class="row">
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
+<div class="row"> 
+  <%# cache("tweets", :expires_in => 15.minute) do  %>    
+    <%= $client.search("technology", :result_type => "recent").take(6).collect do |tweet| %>
+      <div class="col-6 col-sm-6 col-lg-4">
+        <h3> <%= link_to(tweet.user.name, '@' + tweet.user.screen_name) %> </h3> 
+        <p> <%= html_link(tweet.text) %> </p>
+      </div> 
+    <% end %> 
+  <%# end %>   
 </div>
+
+
 
