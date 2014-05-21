@@ -3,7 +3,7 @@
 </div>
 <div class="row"> 
   <%# cache("tweets", :expires_in => 15.minute) do  %>    
-    <%= $client.search("technology", :result_type => "recent").take(6).collect do |tweet| %>
+    <% $client.search("technology", :result_type => "recent").take(6).collect do |tweet| %>
       <div class="col-6 col-sm-6 col-lg-4">
         <h3> <%= link_to(tweet.user.name, "http://twitter.com/" + tweet.user.screen_name) %> </h3> 
         <p> <%= html_link(tweet.text) %> </p>

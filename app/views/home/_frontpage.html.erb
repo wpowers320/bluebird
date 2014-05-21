@@ -1,29 +1,11 @@
 <div class="row"> 
-  <% cache("tweets", :expires_in => 15.hours) do  %>    
-    <div class="col-6 col-sm-6 col-lg-4">
-      <h3> <%= link_to($client.home_timeline[0].user.name, 'http://twitter.com/' + $client.home_timeline[0].user.screen_name) %> </h3> 
-      <p> <%= html_link($client.home_timeline[0].text) %> </p>  
-    </div>
-    <div class="col-6 col-sm-6 col-lg-4">
-      <h3> <%= link_to($client.home_timeline[1].user.name, 'http://twitter.com/' + $client.home_timeline[1].user.screen_name) %> </h3> 
-      <p> <%= html_link($client.home_timeline[1].text) %> </p>  
-    </div>
-    <div class="col-6 col-sm-6 col-lg-4">
-      <h3> <%= link_to($client.home_timeline[2].user.name, 'http://twitter.com/' + $client.home_timeline[2].user.screen_name) %> </h3> 
-      <p> <%= html_link($client.home_timeline[2].text) %> </p>  
-    </div>
-    <div class="col-6 col-sm-6 col-lg-4">
-      <h3> <%= link_to($client.home_timeline[3].user.name, 'http://twitter.com/' + $client.home_timeline[3].user.screen_name) %> </h3> 
-      <p> <%= html_link($client.home_timeline[3].text) %> </p>  
-    </div>
-    <div class="col-6 col-sm-6 col-lg-4">
-      <h3> <%= link_to($client.home_timeline[4].user.name, 'http://twitter.com/' + $client.home_timeline[4].user.screen_name) %> </h3> 
-      <p> <%= html_link($client.home_timeline[4].text) %> </p>  
-    </div>
-    <div class="col-6 col-sm-6 col-lg-4">
-      <h3> <%= link_to($client.home_timeline[5].user.name, 'http://twitter.com/' + $client.home_timeline[5].user.screen_name) %> </h3> 
-      <p> <%= html_link($client.home_timeline[5].text) %> </p>  
-    </div> 
+  <% cache("twits", :expires_in => 15.minutes) do  %>    
+    <% $client.home_timeline(:count => 6).each do |twit| %>
+      <div class="col-6 col-sm-6 col-lg-4">
+        <h3> <%= link_to(twit.user.name, "http://twitter.com/" + twit.user.screen_name) %> </h3> 
+        <p> <%= html_link(twit.text) %> </p>
+      </div> 
+    <% end %> 
   <% end %>   
 </div>
 
