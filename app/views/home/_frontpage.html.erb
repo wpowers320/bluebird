@@ -1,6 +1,6 @@
 <div class="row"> 
-  <% cache("twits", :expires_in => 15.minutes) do  %>    
-    <% $client.home_timeline(:count => 6).each do |twit| %>
+  <% cache("twit", :expires_in => 15.minutes) do  %>    
+    <% $client.home_timeline(:count => 6, :lang => "en").each do |twit| %>
       <div class="col-6 col-sm-6 col-lg-4">
         <h3> <%= link_to(twit.user.name, "http://twitter.com/" + twit.user.screen_name) %> </h3> 
         <p> <%= html_link(twit.text) %> </p>

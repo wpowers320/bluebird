@@ -3,125 +3,66 @@
 </div>
 <div class="row">
   <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+    <!-- this shit don't work... fix it -->
+    <%# cache("tweet_trend", :expires_in => 15.minute) do  %>    
+      <% $client.search("trend", :result_type => "recent").take(6).collect %> 
+    <%# end %>
   </div>
 </div>
 <h2 id="trending-technology">Technology</h2>
 <div class="row">
-  <div class="col-6 col-sm-6 col-lg-4" id="">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
+  <% cache("tweet_tech", :expires_in => 15.minute) do  %>    
+    <% $client.search("technology", :result_type => "popular", :lang => "en" ).take(3).collect do |tweet_tech| %>
+      <div class="col-6 col-sm-6 col-lg-4">
+        <h3> <%= link_to(tweet_tech.user.name, "http://twitter.com/" + tweet_tech.user.screen_name) %> </h3> 
+        <p> <%= html_link(tweet_tech.text) %> </p>
+      </div> 
+    <% end %> 
+  <% end %> 
 </div>
 <h2 id="trending-business">Business</h2>
 <div class="row">
-  <div class="col-6 col-sm-6 col-lg-4" id="">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
+  <% cache("tweet_biz", :expires_in => 15.minute) do  %>    
+    <% $client.search("business", :result_type => "popular", :lang => "en").take(3).collect do |tweet_biz| %>
+      <div class="col-6 col-sm-6 col-lg-4">
+        <h3> <%= link_to(tweet_biz.user.name, "http://twitter.com/" + tweet_biz.user.screen_name) %> </h3> 
+        <p> <%= html_link(tweet_biz.text) %> </p>
+      </div> 
+    <% end %> 
+  <% end %> 
 </div>
 <h2 id="trending-music">Music</h2>
 <div class="row">
-  <div class="col-6 col-sm-6 col-lg-4" id="">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
+  <% cache("tweet_music", :expires_in => 15.minute) do  %>    
+    <% $client.search("music", :result_type => "popular", :lang => "en").take(3).collect do |tweet_music| %>
+      <div class="col-6 col-sm-6 col-lg-4">
+        <h3> <%= link_to(tweet_music.user.name, "http://twitter.com/" + tweet_music.user.screen_name) %> </h3> 
+        <p> <%= html_link(tweet_music.text) %> </p>
+      </div> 
+    <% end %> 
+  <% end %> 
 </div>
 <h2 id="trending-local">Local</h2>
 <div class="row">
-  <div class="col-6 col-sm-6 col-lg-4" id="">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
+  <% cache("tweet_local", :expires_in => 15.minute) do  %>    
+    <% $client.search("local", :result_type => "popular", :lang => "en").take(3).collect do |tweet_local| %>
+      <div class="col-6 col-sm-6 col-lg-4">
+        <h3> <%= link_to(tweet_local.user.name, "http://twitter.com/" + tweet_local.user.screen_name) %> </h3> 
+        <p> <%= html_link(tweet_local.text) %> </p>
+      </div> 
+    <% end %> 
+  <% end %>  
 </div>
 <h2 id="trending-international">International</h2>
 <div class="row">
-  <div class="col-6 col-sm-6 col-lg-4" id="">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h3>Heading</h3>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-  </div>
+  <% cache("tweet_intl", :expires_in => 15.minute) do  %>    
+    <% $client.search("international", :result_type => "popular", :lang => "en").take(3).collect do |tweet_intl| %>
+      <div class="col-6 col-sm-6 col-lg-4">
+        <h3> <%= link_to(tweet_intl.user.name, "http://twitter.com/" + tweet_intl.user.screen_name) %> </h3> 
+        <p> <%= html_link(tweet_intl.text) %> </p>
+      </div> 
+    <% end %> 
+  <% end %>  
 </div>
 
 
